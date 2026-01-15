@@ -1,0 +1,12 @@
+<students>
+    <student>
+        <id>1</id>
+        <name>Prashant</name>
+        <marks>90</marks>
+    </student>
+     <student>
+        <id>2</id>
+        <name>Rohit</name>
+        <marks>95</marks>
+    </student>
+</students>
