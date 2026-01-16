@@ -31,7 +31,7 @@ if "name" in student:
 
 employees={
 
-    101:{"name":"leena","salary":2000},
+    101:{"name":"Prashant","salary":2000},
     102:{"name":"leena","salary":2000}
 }
 
