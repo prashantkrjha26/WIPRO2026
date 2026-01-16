@@ -7,7 +7,7 @@ s1.display()
 
 
 class calculator:
-    def add(selfself,a,b):
+    def add(self,a,b):
         print("sum:", a+b)
 
 c= calculator()
