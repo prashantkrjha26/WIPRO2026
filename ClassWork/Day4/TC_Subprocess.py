@@ -7,3 +7,5 @@ result = subprocess.run(
     text=True
 )
 print(result.stdout)
+
+subprocess.run(("python", "TC_Multiple_Abstract.py"))
