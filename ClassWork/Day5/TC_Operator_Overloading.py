@@ -13,3 +13,17 @@ print(b1+b2)
 # print(b1+b2+b3)   it will give error
 
 print(b1+b3)
+
+# Another way
+class Calc:
+    def add(self, *params):
+        total = 0
+        for x in params:
+            total += x
+        return total
+
+
+c = Calc()
+print(c.add(2, 3))
+print(c.add(2, 3, 4))
+print(c.add(1, 2, 3, 4, 5))
