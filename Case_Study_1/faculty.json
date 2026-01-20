@@ -1,0 +1,50 @@
+[
+  {
+    "id": "F201",
+    "name": "Dr. Rajesh Kumar",
+    "department": "Computer Science",
+    "salary": 85000
+  },
+  {
+    "id": "F202",
+    "name": "Dr. Anjali Verma",
+    "department": "Information Technology",
+    "salary": 82000
+  },
+  {
+    "id": "F203",
+    "name": "Dr. Suresh Mishra",
+    "department": "Electronics",
+    "salary": 78000
+  },
+  {
+    "id": "F204",
+    "name": "Dr. Pooja Sharma",
+    "department": "Mechanical",
+    "salary": 80000
+  },
+  {
+    "id": "F205",
+    "name": "Dr. Amitabh Singh",
+    "department": "Civil",
+    "salary": 83000
+  },
+  {
+    "id": "F206",
+    "name": "Dr. Neha Agarwal",
+    "department": "Computer Science",
+    "salary": 87000
+  },
+  {
+    "id": "F207",
+    "name": "Dr. Rakesh Jain",
+    "department": "Information Technology",
+    "salary": 79000
+  },
+  {
+    "id": "F208",
+    "name": "Dr. Kavita Iyer",
+    "department": "Electronics",
+    "salary": 86000
+  }
+]
