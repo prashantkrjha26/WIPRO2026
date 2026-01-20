@@ -44,6 +44,21 @@ for n in re.finditer(r"\d+","A1 b1000, B33, C444"):
     print(n.group(),n.start(),n.end())
 
 
+# Special Sequence
+
+print(re.search(r"/d+","Age is 25"))
+
+
+# MetaClass
+print(re.search(r"^a.*c$","abnkkkkkknnc"))
+
+
+print(re.search(r"/w+(?=@)","test@gmail.com"))
 
 
 
+print(re.search("python", "Python", re.I))
+
+
+text4="one\ntwo\nthree"
+print(re.findall(r"^t\w+",text4,re.M))
