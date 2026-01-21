@@ -123,7 +123,7 @@ def load_courses(faculty_map_param):
 
 
 
-# RANKING CORE LOGIC
+# RANKING
 
 
 def build_ranked_list(student_map_param):
