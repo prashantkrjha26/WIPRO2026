@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
+
 users = [{"id": 1, "name": "Prashant"},
          {"id": 2, "name": "Ram"}]
 
@@ -23,6 +24,15 @@ def get_user(user_id):
     return jsonify({"message": "user not found"}), 404
 
 
+@app.route("/users", methods=["POST"])
+def add_user():
+    data = request.json
+    newuser = {
+        "id": len(users) + 1, "name": data.get("name")
+    }
+    users.append(newuser)
+    return jsonify(newuser), 201
+
+
 if __name__ == "__main__":
     app.run(debug=True)
-
