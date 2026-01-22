@@ -19,60 +19,44 @@
 
 
 
-# Ques1.py
-# Web Interaction & REST API Consumption using requests
-
 import requests
 import json
 
+# Part 1: Send GET request to a public REST API (India Post)
+url = "https://api.postalpincode.in/pincode/110001"
 
-def fetch_users():
-    url = "https://jsonplaceholder.typicode.com/users"
+# Part 2: Send custom headers with the request
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Accept": "application/json"
+}
 
-    # Part 2: Custom headers
-    headers = {
-        "User-Agent": "Python-Requests-App",
-        "Accept": "application/json"
-    }
+try:
+    # Part 1: Perform GET request
+    response = requests.get(url, headers=headers, timeout=10)
 
-    try:
-        # Part 1: Send GET request to public REST API
-        response = requests.get(url, headers=headers, timeout=10)
+    # Part 5: Handle HTTP errors
+    response.raise_for_status()
 
-        # Part 5: Handle HTTP errors
-        response.raise_for_status()
+    # Part 3: Parse the JSON response
+    data = response.json()
 
-        # Part 3: Parse JSON response
-        users = response.json()
+    # Part 3: Extract specific fields from JSON
+    extracted_data = []
+    for office in data[0].get("PostOffice", []):
+        extracted_data.append({
+            "name": office.get("Name"),
+            "district": office.get("District"),
+            "state": office.get("State")
+        })
 
-        # Extract specific fields
-        extracted_data = []
-        for user in users:
-            extracted_data.append({
-                "id": user.get("id"),
-                "name": user.get("name"),
-                "email": user.get("email"),
-                "city": user.get("address", {}).get("city")
-            })
+    # Part 4: Serialize and save data into JSON file
+    with open("Ques1_Output_Data.json", "w", encoding="utf-8") as file:
+        json.dump(extracted_data, file, indent=4)
 
-        # Part 4: Serialize and save data into JSON file
-        with open("users_data.json", "w", encoding="utf-8") as file:
-            json.dump(extracted_data, file, indent=4)
+    print("Data saved successfully")
 
-        print("Data fetched and saved successfully.")
-
-    except requests.exceptions.HTTPError as http_err:
-        print(f"HTTP error occurred: {http_err}")
-
-    except requests.exceptions.ConnectionError:
-        print("Connection error occurred")
-
-    except requests.exceptions.Timeout:
-        print("Request timed out")
-
-    except requests.exceptions.RequestException as err:
-        print(f"Request error: {err}")
-
-
-if __name__ == "__main__":
-    fetch_users()
+except requests.exceptions.RequestException as e:
+    # Part 5: Handle request-related errors
+    print("Request error:", e)
