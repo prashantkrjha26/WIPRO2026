@@ -28,7 +28,7 @@ if table:
         tabledata.append(row_data)
 
 
-# data to extract
+# data to extract from tables
 extracted_data= {
             "page_title": pagetitle,
             "total_links": len(href),
@@ -36,5 +36,6 @@ extracted_data= {
             "table_data": tabledata
 }
 
+# To Open Extracted Data in JSON Files
 with open('extracted_data.json', 'w', encoding="utf-8") as file:
     json.dump(extracted_data, file, indent=4)
