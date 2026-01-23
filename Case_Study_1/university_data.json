@@ -1,0 +1,182 @@
+{
+  "students": {
+    "401": {
+      "name": "Prashant Kumar Jha",
+      "department": "CSE",
+      "semester": "1",
+      "courses": {
+        "101": 95,
+        "102": 94,
+        "103": 89,
+        "104": 97,
+        "105": 100
+      }
+    },
+    "402": {
+      "name": "Rohit",
+      "department": "CSE",
+      "semester": "1",
+      "courses": {
+        "101": 88,
+        "102": 95,
+        "103": 81,
+        "104": 91,
+        "105": 98
+      }
+    },
+    "403": {
+      "name": "Rahul",
+      "department": "CSE",
+      "semester": "1",
+      "courses": {
+        "101": 89,
+        "102": 78,
+        "103": 91,
+        "104": 98,
+        "105": 82
+      }
+    },
+    "405": {
+      "name": "Ranjeet",
+      "department": "CSE",
+      "semester": "1",
+      "courses": {
+        "101": 84,
+        "102": 87,
+        "103": 87,
+        "104": 87,
+        "105": 87
+      }
+    },
+    "404": {
+      "name": "Priya",
+      "department": "CSE",
+      "semester": "1",
+      "courses": {
+        "101": 78,
+        "102": 83,
+        "103": 76,
+        "104": 82,
+        "105": 99
+      }
+    }
+  },
+  "faculty": {
+    "201": {
+      "name": "Sita",
+      "department": "CSE",
+      "salary": "75000",
+      "email": "sita201@gmail.com",
+      "phone": "98740xxxxx",
+      "courses": [
+        "101"
+      ]
+    },
+    "202": {
+      "name": "Ram",
+      "department": "CSE",
+      "salary": "70000",
+      "email": "ram202@gmail.com",
+      "phone": "80765xxxxx",
+      "courses": [
+        "102"
+      ]
+    },
+    "203": {
+      "name": "Mahesh",
+      "department": "CSE",
+      "salary": "50000",
+      "email": "mahesh203@gmail.com",
+      "phone": "96075xxxxx",
+      "courses": [
+        "103"
+      ]
+    },
+    "204": {
+      "name": "Ganesh",
+      "department": "CSE",
+      "salary": "65000",
+      "email": "ganesh204@gmail.com",
+      "phone": "976310xxxx",
+      "courses": [
+        "104"
+      ]
+    },
+    "205": {
+      "name": "Sudha",
+      "department": "CSE",
+      "salary": "35000",
+      "email": "sudha205@gmail.com",
+      "phone": "78903xxxxx",
+      "courses": [
+        "105"
+      ]
+    }
+  },
+  "courses": {
+    "101": {
+      "name": "Python",
+      "credits": 5,
+      "faculty": "201",
+      "students": [
+        "401",
+        "402",
+        "403",
+        "405",
+        "404"
+      ]
+    },
+    "102": {
+      "name": "Java",
+      "credits": 5,
+      "faculty": "202",
+      "students": [
+        "401",
+        "402",
+        "403",
+        "405",
+        "404"
+      ]
+    },
+    "103": {
+      "name": "Data Structure",
+      "credits": 5,
+      "faculty": "203",
+      "students": [
+        "401",
+        "402",
+        "403",
+        "405",
+        "404"
+      ]
+    },
+    "104": {
+      "name": "Maths",
+      "credits": 5,
+      "faculty": "204",
+      "students": [
+        "401",
+        "402",
+        "403",
+        "405",
+        "404"
+      ]
+    },
+    "105": {
+      "name": "Soft Skill",
+      "credits": 5,
+      "faculty": "205",
+      "students": [
+        "401",
+        "402",
+        "403",
+        "405",
+        "404"
+      ]
+    }
+  },
+  "complaints": [
+    "Faculty 201: Updated Marks",
+    "Student 401: I want to edit my personal details."
+  ]
+}
