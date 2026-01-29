@@ -20,12 +20,7 @@
 # 5. Explain how Pytest supports scalable test automation
 
 
-"""
-Question 4 – Parallel Execution, Reporting & Functional Testing
-"""
-
 import pytest
-
 
 # Question Part 1:
 # Write functional tests that test end-to-end behavior
