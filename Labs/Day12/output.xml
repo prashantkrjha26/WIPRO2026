@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-01-29T22:25:29.670510" rpa="false" schemaversion="5">
+<suite id="s1" name="Ques2" source="D:\PythonProject\Prashant Kumar Jha\Labs\Day12\Ques2.robot">
+<test id="s1-t1" name="Environment_Setup_Verification" line="32">
+<kw name="Run Process" owner="Process">
+<msg time="2026-01-29T22:25:29.841972" level="INFO">Starting process:
+python --version</msg>
+<msg time="2026-01-29T22:25:29.846074" level="INFO">Waiting for process to complete.</msg>
+<msg time="2026-01-29T22:25:29.853029" level="INFO">Process completed.</msg>
+<msg time="2026-01-29T22:25:29.853251" level="INFO">${python_result} = &lt;result object with rc 0&gt;</msg>
+<var>${python_result}</var>
+<arg>python</arg>
+<arg>--version</arg>
+<arg>stdout=PIPE</arg>
+<arg>stderr=PIPE</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2026-01-29T22:25:29.841363" elapsed="0.011919"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${python_result.rc} != 0</arg>
+<arg>Fail</arg>
+<arg>Python is not installed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-01-29T22:25:29.853711" elapsed="0.000753"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Python Version: ${python_result.stdout}${python_result.stderr}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T22:25:29.854883" elapsed="0.001552"/>
+</kw>
+<kw name="Run Process" owner="Process">
+<msg time="2026-01-29T22:25:29.857266" level="INFO">Starting process:
+python -m robot --version</msg>
+<msg time="2026-01-29T22:25:29.861171" level="INFO">Waiting for process to complete.</msg>
+<msg time="2026-01-29T22:25:30.160324" level="INFO">Process completed.</msg>
+<msg time="2026-01-29T22:25:30.160534" level="INFO">${robot_result} = &lt;result object with rc 251&gt;</msg>
+<var>${robot_result}</var>
+<arg>python</arg>
+<arg>-m</arg>
+<arg>robot</arg>
+<arg>--version</arg>
+<arg>stdout=PIPE</arg>
+<arg>stderr=PIPE</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2026-01-29T22:25:29.856690" elapsed="0.303873"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Fail" owner="BuiltIn">
+<msg time="2026-01-29T22:25:30.161891" level="FAIL">Robot Framework is not installed</msg>
+<arg>Robot Framework is not installed</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="FAIL" start="2026-01-29T22:25:30.161660" elapsed="0.000352">Robot Framework is not installed</status>
+</kw>
+<arg>${robot_result.rc} != 0</arg>
+<arg>Fail</arg>
+<arg>Robot Framework is not installed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2026-01-29T22:25:30.161076" elapsed="0.000992">Robot Framework is not installed</status>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Robot Framework Version: ${robot_result.stdout}${robot_result.stderr}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-29T22:25:30.162435" elapsed="0.000033"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${robot_result.stdout}${robot_result.stderr}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-01-29T22:25:30.162739" elapsed="0.000039"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Environment verification completed successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-29T22:25:30.163051" elapsed="0.000037"/>
+</kw>
+<status status="FAIL" start="2026-01-29T22:25:29.840384" elapsed="0.323026">Robot Framework is not installed</status>
+</test>
+<status status="FAIL" start="2026-01-29T22:25:29.671940" elapsed="0.492547"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Ques2" id="s1" pass="0" fail="1" skip="0">Ques2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
