@@ -1,48 +1,239 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-01-30T17:32:06.999467" rpa="false" schemaversion="5">
-<suite id="s1" name="Ques1" source="D:\PythonProject\Prashant Kumar Jha\Labs\Day13\Ques1.robot">
-<test id="s1-t1" name="Simple Test Case Using RIDE" line="29">
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-01-30T17:50:26.593365" rpa="false" schemaversion="5">
+<suite id="s1" name="Ques2" source="D:\PythonProject\Prashant Kumar Jha\Labs\Day13\Ques2.robot">
+<kw name="Open Application" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-01-30T17:32:07.191959" level="INFO">Opening browser 'edge' to base url 'https://www.google.com'.</msg>
+<msg time="2026-01-30T17:50:27.340987" level="INFO">Opening browser 'edge' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-01-30T17:32:07.191639" elapsed="2.878394"/>
+<status status="PASS" start="2026-01-30T17:50:27.340590" elapsed="6.496147"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-01-30T17:32:10.070831" elapsed="0.036924"/>
+<status status="PASS" start="2026-01-30T17:50:33.836925" elapsed="0.027409"/>
 </kw>
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2026-01-30T17:32:10.112698" level="INFO">Page title is 'Google'.</msg>
-<arg>${TITLE}</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2026-01-30T17:32:10.108172" elapsed="0.004773"/>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=username</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-30T17:50:33.864638" elapsed="0.715860"/>
 </kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2026-01-30T17:32:10.328340" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Ques1_screenshot.png"&gt;&lt;img src="Ques1_screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>Ques1_screenshot.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2026-01-30T17:32:10.114577" elapsed="0.214037"/>
+<status status="PASS" start="2026-01-30T17:50:27.339556" elapsed="7.241076"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-01-30T17:32:10.328990" elapsed="2.149116"/>
+<test id="s1-t1" name="Login with multiple users using Excel" line="50">
+<kw name="Login Test Using Keywords">
+<kw name="Input Username">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-30T17:50:34.582917" level="INFO">Typing text 'Admin' into text field 'name=username'.</msg>
+<arg>name=username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T17:50:34.582706" elapsed="0.086106"/>
 </kw>
-<status status="PASS" start="2026-01-30T17:32:07.190592" elapsed="5.288059"/>
+<arg>${username}</arg>
+<status status="PASS" start="2026-01-30T17:50:34.582464" elapsed="0.086462"/>
+</kw>
+<kw name="Input Password">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-30T17:50:34.669545" level="INFO">Typing text 'admin123' into text field 'name=password'.</msg>
+<arg>name=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T17:50:34.669356" elapsed="0.081271"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2026-01-30T17:50:34.669066" elapsed="0.081693"/>
+</kw>
+<kw name="Click Login">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-30T17:50:34.751607" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T17:50:34.751326" elapsed="2.293845"/>
+</kw>
+<status status="PASS" start="2026-01-30T17:50:34.750945" elapsed="2.294338"/>
+</kw>
+<kw name="Verify Login Result">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//h6[text()='Dashboard']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-30T17:50:37.047335" elapsed="0.737906"/>
+</kw>
+<arg>'${expected}' == 'PASS'</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//h6[text()='Dashboard']</arg>
+<arg>10s</arg>
+<arg>ELSE</arg>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//p[contains(@class,'oxd-alert-content-text')]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-01-30T17:50:37.046041" elapsed="0.739296"/>
+</kw>
+<arg>${expected}</arg>
+<status status="PASS" start="2026-01-30T17:50:37.045497" elapsed="0.739918"/>
+</kw>
+<kw name="Logout Application">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-30T17:50:37.786293" level="INFO">Clicking element 'xpath=//span[@class='oxd-userdropdown-tab']'.</msg>
+<arg>xpath=//span[@class='oxd-userdropdown-tab']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T17:50:37.786134" elapsed="0.065648"/>
+</kw>
+<arg>Click Element</arg>
+<arg>xpath=//span[@class='oxd-userdropdown-tab']</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-01-30T17:50:37.785821" elapsed="0.066059"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-30T17:50:37.852461" level="INFO">Clicking element 'xpath=//a[text()='Logout']'.</msg>
+<arg>xpath=//a[text()='Logout']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T17:50:37.852310" elapsed="3.364319"/>
+</kw>
+<arg>Click Element</arg>
+<arg>xpath=//a[text()='Logout']</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-01-30T17:50:37.852008" elapsed="3.364812"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=username</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-30T17:50:41.217075" elapsed="0.687016"/>
+</kw>
+<status status="PASS" start="2026-01-30T17:50:37.785559" elapsed="4.118706"/>
+</kw>
+<arg>username=Admin</arg>
+<arg>password=admin123</arg>
+<arg>expected=PASS</arg>
+<status status="PASS" start="2026-01-30T17:50:34.582091" elapsed="7.322246"/>
+</kw>
+<status status="PASS" start="2026-01-30T17:50:34.580732" elapsed="7.324818"/>
 </test>
-<status status="PASS" start="2026-01-30T17:32:07.000945" elapsed="5.478985"/>
+<test id="s1-t2" name="Login with multiple users using Excel" line="50">
+<kw name="Login Test Using Keywords">
+<kw name="Input Username">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-30T17:50:41.914631" level="INFO">Typing text 'Admin' into text field 'name=username'.</msg>
+<arg>name=username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T17:50:41.914056" elapsed="0.101529"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2026-01-30T17:50:41.913573" elapsed="0.102227"/>
+</kw>
+<kw name="Input Password">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-30T17:50:42.017076" level="INFO">Typing text 'wrongpass' into text field 'name=password'.</msg>
+<arg>name=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T17:50:42.016603" elapsed="0.126873"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2026-01-30T17:50:42.016081" elapsed="0.127816"/>
+</kw>
+<kw name="Click Login">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-30T17:50:42.145465" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T17:50:42.145155" elapsed="0.111345"/>
+</kw>
+<status status="PASS" start="2026-01-30T17:50:42.144173" elapsed="0.112638"/>
+</kw>
+<kw name="Verify Login Result">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-01-30T17:50:44.164834" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-01-30T17:50:44.165077" level="FAIL">Page should have contained element 'xpath=//p[contains(@class,'oxd-alert-content-text')]' but did not.</msg>
+<arg>xpath=//p[contains(@class,'oxd-alert-content-text')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2026-01-30T17:50:42.259002" elapsed="1.910227">Page should have contained element 'xpath=//p[contains(@class,'oxd-alert-content-text')]' but did not.</status>
+</kw>
+<arg>'${expected}' == 'PASS'</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>xpath=//h6[text()='Dashboard']</arg>
+<arg>10s</arg>
+<arg>ELSE</arg>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//p[contains(@class,'oxd-alert-content-text')]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2026-01-30T17:50:42.258278" elapsed="1.911132">Page should have contained element 'xpath=//p[contains(@class,'oxd-alert-content-text')]' but did not.</status>
+</kw>
+<arg>${expected}</arg>
+<status status="FAIL" start="2026-01-30T17:50:42.257235" elapsed="1.912580">Page should have contained element 'xpath=//p[contains(@class,'oxd-alert-content-text')]' but did not.</status>
+</kw>
+<kw name="Logout Application">
+<status status="NOT RUN" start="2026-01-30T17:50:44.170279" elapsed="0.000096"/>
+</kw>
+<arg>username=Admin</arg>
+<arg>password=wrongpass</arg>
+<arg>expected=FAIL</arg>
+<status status="FAIL" start="2026-01-30T17:50:41.913005" elapsed="2.257664">Page should have contained element 'xpath=//p[contains(@class,'oxd-alert-content-text')]' but did not.</status>
+</kw>
+<status status="FAIL" start="2026-01-30T17:50:41.909822" elapsed="2.261609">Page should have contained element 'xpath=//p[contains(@class,'oxd-alert-content-text')]' but did not.</status>
+</test>
+<test id="s1-t3" name="Login with multiple users using Excel" line="50">
+<kw name="Login Test Using Keywords">
+<kw name="Input Username">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-30T17:50:44.174971" level="INFO">Typing text 'wronguser' into text field 'name=username'.</msg>
+<msg time="2026-01-30T17:50:44.291353" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-01-30T17:50:44.291946" level="FAIL">Element with locator 'name=username' not found.</msg>
+<arg>name=username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-01-30T17:50:44.174575" elapsed="0.123368">Element with locator 'name=username' not found.</status>
+</kw>
+<arg>${username}</arg>
+<status status="FAIL" start="2026-01-30T17:50:44.174087" elapsed="0.124606">Element with locator 'name=username' not found.</status>
+</kw>
+<kw name="Input Password">
+<arg>${password}</arg>
+<status status="NOT RUN" start="2026-01-30T17:50:44.299575" elapsed="0.000113"/>
+</kw>
+<kw name="Click Login">
+<status status="NOT RUN" start="2026-01-30T17:50:44.299951" elapsed="0.000053"/>
+</kw>
+<kw name="Verify Login Result">
+<arg>${expected}</arg>
+<status status="NOT RUN" start="2026-01-30T17:50:44.300157" elapsed="0.000042"/>
+</kw>
+<kw name="Logout Application">
+<status status="NOT RUN" start="2026-01-30T17:50:44.300374" elapsed="0.000053"/>
+</kw>
+<arg>username=wronguser</arg>
+<arg>password=admin123</arg>
+<arg>expected=FAIL</arg>
+<status status="FAIL" start="2026-01-30T17:50:44.173526" elapsed="0.127111">Element with locator 'name=username' not found.</status>
+</kw>
+<status status="FAIL" start="2026-01-30T17:50:44.172249" elapsed="0.129296">Element with locator 'name=username' not found.</status>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-30T17:50:44.302845" elapsed="2.350226"/>
+</kw>
+<status status="FAIL" start="2026-01-30T17:50:26.594970" elapsed="20.058241"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Ques1" id="s1" pass="1" fail="0" skip="0">Ques1</stat>
+<stat name="Ques2" id="s1" pass="1" fail="2" skip="0">Ques2</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2026-01-30T17:50:41.909900" level="WARN">Multiple tests with name 'Login with multiple users using Excel' executed in suite 'Ques2'.</msg>
+<msg time="2026-01-30T17:50:44.172293" level="WARN">Multiple tests with name 'Login with multiple users using Excel' executed in suite 'Ques2'.</msg>
 </errors>
 </robot>
