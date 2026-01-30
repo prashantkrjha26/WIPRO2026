@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-01-30T17:32:06.999467" rpa="false" schemaversion="5">
+<suite id="s1" name="Ques1" source="D:\PythonProject\Prashant Kumar Jha\Labs\Day13\Ques1.robot">
+<test id="s1-t1" name="Simple Test Case Using RIDE" line="29">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-30T17:32:07.191959" level="INFO">Opening browser 'edge' to base url 'https://www.google.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-30T17:32:07.191639" elapsed="2.878394"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-01-30T17:32:10.070831" elapsed="0.036924"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2026-01-30T17:32:10.112698" level="INFO">Page title is 'Google'.</msg>
+<arg>${TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2026-01-30T17:32:10.108172" elapsed="0.004773"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-01-30T17:32:10.328340" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Ques1_screenshot.png"&gt;&lt;img src="Ques1_screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>Ques1_screenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-01-30T17:32:10.114577" elapsed="0.214037"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-30T17:32:10.328990" elapsed="2.149116"/>
+</kw>
+<status status="PASS" start="2026-01-30T17:32:07.190592" elapsed="5.288059"/>
+</test>
+<status status="PASS" start="2026-01-30T17:32:07.000945" elapsed="5.478985"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Ques1" id="s1" pass="1" fail="0" skip="0">Ques1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
