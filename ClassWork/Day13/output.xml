@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-01-30T16:16:35.344167" rpa="false" schemaversion="5">
+<suite id="s1" name="TC008 tutorialsninja" source="D:\PythonProject\Prashant Kumar Jha\ClassWork\Day13\TC008_tutorialsninja.robot">
+<test id="s1-t1" name="TC008_DataDriver_TutorialsNinja" line="37">
+<kw name="Open TutorialsNinja" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:36.209993" level="INFO">Opening browser 'edge' to base url 'https://tutorialsninja.com/demo/index.php?route=account/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-30T16:16:36.209693" elapsed="2.346357"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-01-30T16:16:38.556440" elapsed="0.035136"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=input-email</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-30T16:16:38.591978" elapsed="0.040115"/>
+</kw>
+<status status="PASS" start="2026-01-30T16:16:36.208859" elapsed="2.423554"/>
+</kw>
+<kw name="TutorialsNinja Login With Excel">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:38.634754" level="INFO">Typing text 'prashantkumarjha1@gmail.com' into text field 'id=input-email'.</msg>
+<arg>id=input-email</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T16:16:38.633957" elapsed="0.239452"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:38.875097" level="INFO">Typing text 'Prashant@1' into text field 'id=input-password'.</msg>
+<arg>id=input-password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T16:16:38.874035" elapsed="0.146616"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:39.234129" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC008_tutorialsninja_before_login_prashantkumarjha1%40gmail.com.png"&gt;&lt;img src="TC008_tutorialsninja_before_login_prashantkumarjha1%40gmail.com.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC008_tutorialsninja_before_login_${username}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-01-30T16:16:39.021166" elapsed="0.213358"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:39.235968" level="INFO">Clicking button 'xpath=//input[@value='Login']'.</msg>
+<arg>xpath=//input[@value='Login']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T16:16:39.235125" elapsed="0.898924"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//h2[text()='My Account']</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-30T16:16:40.134508" elapsed="0.039474"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:40.328968" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC008_tutorialsninja_after_login_prashantkumarjha1%40gmail.com.png"&gt;&lt;img src="TC008_tutorialsninja_after_login_prashantkumarjha1%40gmail.com.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC008_tutorialsninja_after_login_${username}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-01-30T16:16:40.174371" elapsed="0.154794"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:40.330056" level="INFO">Clicking element 'xpath=//a[@title='My Account']'.</msg>
+<arg>xpath=//a[@title='My Account']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T16:16:40.329637" elapsed="0.096161"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//a[text()='Logout']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-30T16:16:40.426425" elapsed="0.025602"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:40.452644" level="INFO">Clicking element 'xpath=//a[text()='Logout']'.</msg>
+<arg>xpath=//a[text()='Logout']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T16:16:40.452321" elapsed="0.484306"/>
+</kw>
+<arg>username=prashantkumarjha1@gmail.com</arg>
+<arg>password=Prashant@1</arg>
+<status status="PASS" start="2026-01-30T16:16:38.633272" elapsed="2.303696"/>
+</kw>
+<kw name="Close TutorialsNinja Browser" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-30T16:16:40.938129" elapsed="2.263596"/>
+</kw>
+<status status="PASS" start="2026-01-30T16:16:40.937654" elapsed="2.264378"/>
+</kw>
+<status status="PASS" start="2026-01-30T16:16:36.207338" elapsed="6.995132"/>
+</test>
+<test id="s1-t2" name="TC008_DataDriver_TutorialsNinja" line="37">
+<kw name="Open TutorialsNinja" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:43.209319" level="INFO">Opening browser 'edge' to base url 'https://tutorialsninja.com/demo/index.php?route=account/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-30T16:16:43.208488" elapsed="2.639550"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-01-30T16:16:45.848507" elapsed="0.034973"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=input-email</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-30T16:16:45.884148" elapsed="0.050558"/>
+</kw>
+<status status="PASS" start="2026-01-30T16:16:43.207279" elapsed="2.727860"/>
+</kw>
+<kw name="TutorialsNinja Login With Excel">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:45.938220" level="INFO">Typing text 'prashantkumarjha2@gmail.com' into text field 'id=input-email'.</msg>
+<arg>id=input-email</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T16:16:45.937671" elapsed="0.253087"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:46.191816" level="INFO">Typing text 'Prashant@2' into text field 'id=input-password'.</msg>
+<arg>id=input-password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T16:16:46.191242" elapsed="0.158422"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:46.641282" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC008_tutorialsninja_before_login_prashantkumarjha2%40gmail.com.png"&gt;&lt;img src="TC008_tutorialsninja_before_login_prashantkumarjha2%40gmail.com.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC008_tutorialsninja_before_login_${username}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-01-30T16:16:46.350086" elapsed="0.291497"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:46.642557" level="INFO">Clicking button 'xpath=//input[@value='Login']'.</msg>
+<arg>xpath=//input[@value='Login']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T16:16:46.642020" elapsed="1.104629"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//h2[text()='My Account']</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-30T16:16:47.747022" elapsed="0.034710"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:47.950859" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC008_tutorialsninja_after_login_prashantkumarjha2%40gmail.com.png"&gt;&lt;img src="TC008_tutorialsninja_after_login_prashantkumarjha2%40gmail.com.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC008_tutorialsninja_after_login_${username}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-01-30T16:16:47.782223" elapsed="0.169187"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:47.953010" level="INFO">Clicking element 'xpath=//a[@title='My Account']'.</msg>
+<arg>xpath=//a[@title='My Account']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T16:16:47.952095" elapsed="0.094534"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//a[text()='Logout']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-30T16:16:48.047083" elapsed="0.032936"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:48.081826" level="INFO">Clicking element 'xpath=//a[text()='Logout']'.</msg>
+<arg>xpath=//a[text()='Logout']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T16:16:48.080863" elapsed="0.514670"/>
+</kw>
+<arg>username=prashantkumarjha2@gmail.com</arg>
+<arg>password=Prashant@2</arg>
+<status status="PASS" start="2026-01-30T16:16:45.936390" elapsed="2.659284"/>
+</kw>
+<kw name="Close TutorialsNinja Browser" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-30T16:16:48.596813" elapsed="2.262502"/>
+</kw>
+<status status="PASS" start="2026-01-30T16:16:48.596411" elapsed="2.263195"/>
+</kw>
+<status status="PASS" start="2026-01-30T16:16:43.203914" elapsed="7.656347"/>
+</test>
+<test id="s1-t3" name="TC008_DataDriver_TutorialsNinja" line="37">
+<kw name="Open TutorialsNinja" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:50.864085" level="INFO">Opening browser 'edge' to base url 'https://tutorialsninja.com/demo/index.php?route=account/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-30T16:16:50.863700" elapsed="2.556377"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-01-30T16:16:53.420605" elapsed="0.033529"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=input-email</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-30T16:16:53.454574" elapsed="0.037308"/>
+</kw>
+<status status="PASS" start="2026-01-30T16:16:50.863190" elapsed="2.628893"/>
+</kw>
+<kw name="TutorialsNinja Login With Excel">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:53.495070" level="INFO">Typing text 'prashantkumarjha3@gmail.com' into text field 'id=input-email'.</msg>
+<arg>id=input-email</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T16:16:53.494525" elapsed="0.245946"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:53.741453" level="INFO">Typing text 'Prashant@3' into text field 'id=input-password'.</msg>
+<arg>id=input-password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T16:16:53.740842" elapsed="0.155655"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:54.117017" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC008_tutorialsninja_before_login_prashantkumarjha3%40gmail.com.png"&gt;&lt;img src="TC008_tutorialsninja_before_login_prashantkumarjha3%40gmail.com.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC008_tutorialsninja_before_login_${username}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-01-30T16:16:53.897039" elapsed="0.220411"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:54.118944" level="INFO">Clicking button 'xpath=//input[@value='Login']'.</msg>
+<arg>xpath=//input[@value='Login']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T16:16:54.118090" elapsed="0.924039"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//h2[text()='My Account']</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-30T16:16:55.042625" elapsed="0.037674"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:55.226337" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC008_tutorialsninja_after_login_prashantkumarjha3%40gmail.com.png"&gt;&lt;img src="TC008_tutorialsninja_after_login_prashantkumarjha3%40gmail.com.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC008_tutorialsninja_after_login_${username}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-01-30T16:16:55.080722" elapsed="0.146023"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:55.228476" level="INFO">Clicking element 'xpath=//a[@title='My Account']'.</msg>
+<arg>xpath=//a[@title='My Account']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T16:16:55.227641" elapsed="0.102650"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//a[text()='Logout']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-30T16:16:55.330509" elapsed="0.034031"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-30T16:16:55.365506" level="INFO">Clicking element 'xpath=//a[text()='Logout']'.</msg>
+<arg>xpath=//a[text()='Logout']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T16:16:55.364937" elapsed="0.528341"/>
+</kw>
+<arg>username=prashantkumarjha3@gmail.com</arg>
+<arg>password=Prashant@3</arg>
+<status status="PASS" start="2026-01-30T16:16:53.493341" elapsed="2.400178"/>
+</kw>
+<kw name="Close TutorialsNinja Browser" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-30T16:16:55.894614" elapsed="2.252583"/>
+</kw>
+<status status="PASS" start="2026-01-30T16:16:55.894201" elapsed="2.253244"/>
+</kw>
+<status status="PASS" start="2026-01-30T16:16:50.861210" elapsed="7.287039"/>
+</test>
+<status status="PASS" start="2026-01-30T16:16:35.346055" elapsed="22.803689"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC008 tutorialsninja" id="s1" pass="3" fail="0" skip="0">TC008 tutorialsninja</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-01-30T16:16:43.204181" level="WARN">Multiple tests with name 'TC008_DataDriver_TutorialsNinja' executed in suite 'TC008 tutorialsninja'.</msg>
+<msg time="2026-01-30T16:16:50.861345" level="WARN">Multiple tests with name 'TC008_DataDriver_TutorialsNinja' executed in suite 'TC008 tutorialsninja'.</msg>
+</errors>
+</robot>
