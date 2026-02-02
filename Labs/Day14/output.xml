@@ -1,143 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.11.5 on win32)" generated="2026-02-02T18:12:23.976917" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.1 (Python 3.11.5 on win32)" generated="2026-02-02T20:32:10.020432" rpa="false" schemaversion="5">
 <suite id="s1" name="Ques2" source="D:\PythonProject\Prashant Kumar Jha\Labs\Day14\Ques2.robot">
-<test id="s1-t1" name="Browser Automation Form Test" line="39">
+<kw name="Open Test Browser" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-02-02T18:12:24.181616" level="INFO">Opening browser 'chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
-<arg>https://the-internet.herokuapp.com/login</arg>
+<msg time="2026-02-02T20:32:10.293292" level="INFO">Opening browser 'edge' to base url 'https://testautomationpractice.blogspot.com/'.</msg>
+<arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-02-02T18:12:24.181616" elapsed="6.471095"/>
+<status status="PASS" start="2026-02-02T20:32:10.293292" elapsed="4.541111"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-02-02T18:12:30.653718" elapsed="0.025855"/>
+<status status="PASS" start="2026-02-02T20:32:14.836160" elapsed="0.041535"/>
+</kw>
+<status status="PASS" start="2026-02-02T20:32:10.293292" elapsed="4.584403"/>
+</kw>
+<test id="s1-t1" name="Form Automation Test" line="42">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T20:32:14.881736" level="INFO">Typing text 'Prashant' into text field 'id=name'.</msg>
+<arg>id=name</arg>
+<arg>Prashant</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T20:32:14.879719" elapsed="0.249868"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-02T18:12:30.680574" level="INFO">Typing text 'tomsmith' into text field 'id=username'.</msg>
-<arg>id=username</arg>
-<arg>tomsmith</arg>
+<msg time="2026-02-02T20:32:15.129587" level="INFO">Typing text 'prashantkumarjha1@gmail.com' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>prashantkumarjha1@gmail.com</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-02T18:12:30.680574" elapsed="0.102518"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-02T18:12:30.783092" level="INFO">Typing text 'SuperSecretPassword!' into text field 'id=password'.</msg>
-<arg>id=password</arg>
-<arg>SuperSecretPassword!</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-02T18:12:30.783092" elapsed="0.070729"/>
-</kw>
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2026-02-02T18:12:30.853821" level="INFO">Opening url 'https://the-internet.herokuapp.com/checkboxes'</msg>
-<arg>https://the-internet.herokuapp.com/checkboxes</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2026-02-02T18:12:30.853821" elapsed="0.384284"/>
+<status status="PASS" start="2026-02-02T20:32:15.129587" elapsed="0.209536"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-02T18:12:31.238105" level="INFO">Clicking element 'xpath=(//input[@type='checkbox'])[1]'.</msg>
-<arg>xpath=(//input[@type='checkbox'])[1]</arg>
+<msg time="2026-02-02T20:32:15.340122" level="INFO">Clicking element 'id=male'.</msg>
+<arg>id=male</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-02T18:12:31.238105" elapsed="0.061031"/>
+<status status="PASS" start="2026-02-02T20:32:15.339123" elapsed="0.173118"/>
 </kw>
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2026-02-02T18:12:31.300158" level="INFO">Opening url 'https://the-internet.herokuapp.com/dropdown'</msg>
-<arg>https://the-internet.herokuapp.com/dropdown</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2026-02-02T18:12:31.300158" elapsed="0.376860"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T20:32:15.512241" level="INFO">Clicking element 'id=monday'.</msg>
+<arg>id=monday</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T20:32:15.512241" elapsed="0.140498"/>
 </kw>
-<kw name="Select From List By Value" owner="SeleniumLibrary">
-<msg time="2026-02-02T18:12:31.678012" level="INFO">Selecting options from selection list 'id=dropdown' by value 1.</msg>
-<arg>id=dropdown</arg>
-<arg>1</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="PASS" start="2026-02-02T18:12:31.677018" elapsed="0.087140"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-02-02T18:12:31.765702" level="INFO">Radio button simulated via selection</msg>
-<arg>Radio button simulated via selection</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-02-02T18:12:31.765702" elapsed="0.000000"/>
-</kw>
-<arg>True</arg>
-<arg>Log</arg>
-<arg>Radio button simulated via selection</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-02-02T18:12:31.764158" elapsed="0.001544"/>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-02-02T20:32:15.658857" level="INFO">Selecting options from selection list 'id=country' by label India.</msg>
+<arg>id=country</arg>
+<arg>India</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-02-02T20:32:15.652739" elapsed="0.193990"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-02-02T18:12:31.766714" level="INFO">Condition executed successfully</msg>
-<arg>Condition executed successfully</arg>
+<msg time="2026-02-02T20:32:15.846729" level="INFO">Running test on Edge browser</msg>
+<arg>Running test on Edge browser</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-02-02T18:12:31.766714" elapsed="0.000000"/>
+<status status="PASS" start="2026-02-02T20:32:15.846729" elapsed="0.000000"/>
 </kw>
-<arg>1 == 1</arg>
+<arg>'${BROWSER}' == 'edge'</arg>
 <arg>Log</arg>
-<arg>Condition executed successfully</arg>
+<arg>Running test on Edge browser</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-02-02T18:12:31.765702" elapsed="0.001012"/>
-</kw>
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2026-02-02T18:12:31.767716" level="INFO">Opening url 'https://the-internet.herokuapp.com/login'</msg>
-<arg>https://the-internet.herokuapp.com/login</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2026-02-02T18:12:31.767716" elapsed="0.373371"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-02-02T18:12:32.142086" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
-<arg>xpath=//button[@type='submit']</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-02T18:12:32.141087" elapsed="0.793091"/>
+<status status="PASS" start="2026-02-02T20:32:15.846729" elapsed="0.000000"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-02-02T18:12:34.934772" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
+<msg time="2026-02-02T20:32:17.847641" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-02-02T18:12:32.934178" elapsed="2.000594"/>
+<status status="PASS" start="2026-02-02T20:32:15.846729" elapsed="2.000912"/>
 </kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2026-02-02T18:12:34.968052" level="INFO">Element 'id=flash' is displayed.</msg>
-<arg>id=flash</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-02T18:12:34.936308" elapsed="0.032790"/>
-</kw>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2026-02-02T18:12:34.986715" level="INFO">${msg} = Your username is invalid!
-×</msg>
-<var>${msg}</var>
-<arg>id=flash</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-02T18:12:34.969098" elapsed="0.017617"/>
+<kw name="Get Selected List Label" owner="SeleniumLibrary">
+<msg time="2026-02-02T20:32:18.100150" level="INFO">${selected} = India</msg>
+<var>${selected}</var>
+<arg>id=country</arg>
+<doc>Returns the label of selected option from selection list ``locator``.</doc>
+<status status="PASS" start="2026-02-02T20:32:17.849658" elapsed="0.250492"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
-<msg time="2026-02-02T18:12:34.987740" level="FAIL">Your username is invalid != You logged into a secure</msg>
-<arg>${msg}[0:24]</arg>
-<arg>You logged into a secure</arg>
+<arg>${selected}</arg>
+<arg>India</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="FAIL" start="2026-02-02T18:12:34.987740" elapsed="0.000000">Your username is invalid != You logged into a secure</status>
+<status status="PASS" start="2026-02-02T20:32:18.100150" elapsed="0.000000"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-02T20:32:18.103085" level="INFO">Clicking button 'xpath=//button[text()='Submit']'.</msg>
+<arg>xpath=//button[text()='Submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T20:32:18.103085" elapsed="0.233521"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<arg>2</arg>
+<msg time="2026-02-02T20:32:20.338573" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2026-02-02T18:12:34.988716" elapsed="0.000000"/>
+<status status="PASS" start="2026-02-02T20:32:18.336606" elapsed="2.001967"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="NOT RUN" start="2026-02-02T18:12:34.988716" elapsed="0.000000"/>
-</kw>
-<status status="FAIL" start="2026-02-02T18:12:24.179104" elapsed="10.809612">Your username is invalid != You logged into a secure</status>
+<status status="PASS" start="2026-02-02T20:32:14.877695" elapsed="5.462897"/>
 </test>
-<status status="FAIL" start="2026-02-02T18:12:23.978910" elapsed="11.010806"/>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-02-02T20:32:20.340592" elapsed="2.419691"/>
+</kw>
+<status status="PASS" start="2026-02-02T20:32:10.020432" elapsed="12.739851"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Ques2" id="s1" pass="0" fail="1" skip="0">Ques2</stat>
+<stat name="Ques2" id="s1" pass="1" fail="0" skip="0">Ques2</stat>
 </suite>
 </statistics>
 <errors>

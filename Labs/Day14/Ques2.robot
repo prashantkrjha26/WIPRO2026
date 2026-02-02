@@ -23,56 +23,52 @@
 
 
 
-
 *** Settings ***
-# Import SeleniumLibrary and BuiltIn library
 Library    SeleniumLibrary
-Library    BuiltIn
+
+# Part 1: Opens a browser using SeleniumLibrary
+Suite Setup     Open Test Browser
+
+# Part 5: Closes the browser and generates execution reports
+Suite Teardown  Close All Browsers
 
 
 *** Variables ***
-${BROWSER}     chrome
+${URL}      https://testautomationpractice.blogspot.com/
+${BROWSER}  edge
 
 
 *** Test Cases ***
-# Question 6 – Browser Automation & Built-in Libraries
-Browser Automation Form Test
+Form Automation Test
 
-    # 1. Open browser using SeleniumLibrary
-    Open Browser    https://the-internet.herokuapp.com/login    ${BROWSER}
+    # Part 2: Interacts with Text box
+    Input Text    id=name      Prashant
+    Input Text    id=email    prashantkumarjha1@gmail.com
+
+    # Part 2: Interacts with Radio button
+    Click Element    id=male
+
+    # Part 2: Interacts with Check box
+    Click Element    id=monday
+
+    # Part 2: Interacts with Drop-down
+    Select From List By Label    id=country    India
+
+    # Part 3: Uses Built-in keyword Run Keyword If
+    Run Keyword If    '${BROWSER}' == 'edge'    Log    Running test on Edge browser
+
+    # Part 3: Uses Built-in keyword Sleep
+    Sleep    2s
+
+    # Part 4: Validates form submission
+    ${selected}=    Get Selected List Label    id=country
+    Should Be Equal    ${selected}    India
+
+    Click Button    xpath=//button[text()='Submit']
+    Sleep    2s
+
+
+*** Keywords ***
+Open Test Browser
+    Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
-
-    # 2. Interact with Text Box
-    Input Text    id=username    tomsmith
-    Input Text    id=password    SuperSecretPassword!
-
-    # 2. Interact with Check Box
-    Go To    https://the-internet.herokuapp.com/checkboxes
-    Click Element    xpath=(//input[@type='checkbox'])[1]
-
-    # 2. Interact with Drop-down
-    Go To    https://the-internet.herokuapp.com/dropdown
-    Select From List By Value    id=dropdown    1
-
-    # 2. Interact with Radio Button (simulated using option selection)
-    Run Keyword If    True    Log    Radio button simulated via selection
-
-    # 3. Built-in keyword: Run Keyword If
-    Run Keyword If    1 == 1    Log    Condition executed successfully
-
-    # 4. Validate form submission
-    Go To    https://the-internet.herokuapp.com/login
-    Click Button    xpath=//button[@type='submit']
-    Sleep    2
-    Element Should Be Visible    id=flash
-
-    # 3. Built-in keyword: Should Be Equal
-    ${msg}=    Get Text    id=flash
-    Should Be Equal    ${msg}[0:24]    You logged into a secure
-
-    # 3. Built-in keyword: Sleep
-    Sleep    2
-
-    # 5. Close browser and generate execution reports
-    Close Browser
-
