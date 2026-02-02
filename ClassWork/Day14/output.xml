@@ -1,446 +1,1192 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-02-02T15:03:06.547220" rpa="false" schemaversion="5">
-<suite id="s1" name="TC009 FlaskAPI" source="D:\PythonProject\Prashant Kumar Jha\ClassWork\Day14\TC009_FlaskAPI.robot">
-<test id="s1-t1" name="Create New User" line="9">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2026-02-02T15:03:06.661178" level="INFO">Creating Session using : alias=api, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>api</arg>
-<arg>${BASE_URL}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2026-02-02T15:03:06.660993" elapsed="0.000359"/>
+<robot generator="Robot 7.4.1 (Python 3.11.5 on win32)" generated="2026-02-02T19:19:20.147122" rpa="false" schemaversion="5">
+<suite id="s1" name="TC008 loop" source="D:\PythonProject\Prashant Kumar Jha\ClassWork\Day14\TC008_loop.robot">
+<test id="s1-t1" name="Print Names" line="2">
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.161829" elapsed="0.015743"/>
 </kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-02T15:03:06.662366" level="INFO">${data} = {'name': 'varsha'}</msg>
-<var>${data}</var>
-<arg>name=varsha</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.661664" elapsed="0.000732"/>
+<var name="${name}">Ram</var>
+<status status="PASS" start="2026-02-02T19:19:20.161829" elapsed="0.015743"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.177572" elapsed="0.000000"/>
 </kw>
-<kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2026-02-02T15:03:06.668114" level="INFO">POST Request : url=http://127.0.0.1:5000/users 
- path_url=/users 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '18', 'Content-Type': 'application/json'} 
- body=b'{"name": "varsha"}' 
- </msg>
-<msg time="2026-02-02T15:03:06.668212" level="INFO">POST Response : url=http://127.0.0.1:5000/users 
- status=201, reason=CREATED 
- headers={'Server': 'Werkzeug/3.1.5 Python/3.14.2', 'Date': 'Mon, 02 Feb 2026 09:33:06 GMT', 'Content-Type': 'application/json', 'Content-Length': '34', 'Connection': 'close'} 
- body={
-  "id": 3,
-  "name": "varsha"
-}
- 
- </msg>
-<msg time="2026-02-02T15:03:06.668324" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<var>${response}</var>
-<arg>api</arg>
-<arg>/users</arg>
-<arg>json=${data}</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.662702" elapsed="0.005644"/>
+<var name="${name}">Ravi</var>
+<status status="PASS" start="2026-02-02T19:19:20.177572" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.177572" elapsed="0.000000"/>
 </kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>201</arg>
-<arg>${response}</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.668658" elapsed="0.000282"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-02-02T15:03:06.670235" level="INFO">{'id': 3, 'name': 'varsha'}</msg>
-<arg>${response.json()}</arg>
-<arg>console=True</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.669237" elapsed="0.001217"/>
-</kw>
-<status status="PASS" start="2026-02-02T15:03:06.660214" elapsed="0.010587"/>
+<var name="${name}">Taj</var>
+<status status="PASS" start="2026-02-02T19:19:20.177572" elapsed="0.000000"/>
+</iter>
+<var>${name}</var>
+<value>Ram</value>
+<value>Ravi</value>
+<value>Taj</value>
+<status status="PASS" start="2026-02-02T19:19:20.161829" elapsed="0.015743"/>
+</for>
+<status status="PASS" start="2026-02-02T19:19:20.161829" elapsed="0.015743"/>
 </test>
-<test id="s1-t2" name="Update User Using PUT" line="17">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2026-02-02T15:03:06.671974" level="INFO">Creating Session using : alias=api, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>api</arg>
-<arg>${BASE_URL}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2026-02-02T15:03:06.671807" elapsed="0.000313"/>
+<test id="s1-t2" name="Print Names Using While Loop" line="7">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.180279" level="INFO">${count} = 1</msg>
+<var>${count}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.180279" elapsed="0.000000"/>
 </kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-02T15:03:06.672650" level="INFO">${data} = {'name': 'Pooja'}</msg>
-<var>${data}</var>
-<arg>name=Pooja</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.672340" elapsed="0.000332"/>
+<while condition="${count}&lt;=5">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.180279" elapsed="0.000000"/>
 </kw>
-<kw name="PUT On Session" owner="RequestsLibrary">
-<msg time="2026-02-02T15:03:06.676355" level="INFO">PUT Request : url=http://127.0.0.1:5000/users/2 
- path_url=/users/2 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '17', 'Content-Type': 'application/json'} 
- body=b'{"name": "Pooja"}' 
- </msg>
-<msg time="2026-02-02T15:03:06.676461" level="INFO">PUT Response : url=http://127.0.0.1:5000/users/2 
- status=200, reason=OK 
- headers={'Server': 'Werkzeug/3.1.5 Python/3.14.2', 'Date': 'Mon, 02 Feb 2026 09:33:06 GMT', 'Content-Type': 'application/json', 'Content-Length': '33', 'Connection': 'close'} 
- body={
-  "id": 2,
-  "name": "Pooja"
-}
- 
- </msg>
-<msg time="2026-02-02T15:03:06.676644" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>api</arg>
-<arg>/users/2</arg>
-<arg>json=${data}</arg>
-<doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.672839" elapsed="0.003847"/>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.182289" level="INFO">${count} = 2</msg>
+<var>${count}</var>
+<arg>${count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
 </kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>200</arg>
-<arg>${response}</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.677130" elapsed="0.000419"/>
+<status status="PASS" start="2026-02-02T19:19:20.180279" elapsed="0.002010"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-02-02T15:03:06.678675" level="INFO">{'id': 2, 'name': 'Pooja'}</msg>
-<arg>${response.json()}</arg>
-<arg>console=True</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.677938" elapsed="0.000951"/>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.182289" level="INFO">${count} = 3</msg>
+<var>${count}</var>
+<arg>${count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2026-02-02T15:03:06.671324" elapsed="0.007853"/>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.182289" level="INFO">${count} = 4</msg>
+<var>${count}</var>
+<arg>${count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.182289" level="INFO">${count} = 5</msg>
+<var>${count}</var>
+<arg>${count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.182289" level="INFO">${count} = 6</msg>
+<var>${count}</var>
+<arg>${count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
+</iter>
+<status status="PASS" start="2026-02-02T19:19:20.180279" elapsed="0.002010"/>
+</while>
+<status status="PASS" start="2026-02-02T19:19:20.180279" elapsed="0.002010"/>
 </test>
-<test id="s1-t3" name="Patch User Using PATCH" line="25">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2026-02-02T15:03:06.680477" level="INFO">Creating Session using : alias=api, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>api</arg>
-<arg>${BASE_URL}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2026-02-02T15:03:06.680256" elapsed="0.000409"/>
+<test id="s1-t3" name="IF Condition Example" line="17">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.182289" level="INFO">${age} = 20</msg>
+<var>${age}</var>
+<arg>20</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
 </kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2026-02-02T15:03:06.681470" level="INFO">${data} = {'name': 'Pooja patched'}</msg>
-<var>${data}</var>
-<arg>name=Pooja patched</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.680984" elapsed="0.000525"/>
-</kw>
-<kw name="PATCH On Session" owner="RequestsLibrary">
-<msg time="2026-02-02T15:03:06.684648" level="INFO">PATCH Request : url=http://127.0.0.1:5000/users/2 
- path_url=/users/2 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '25', 'Content-Type': 'application/json'} 
- body=b'{"name": "Pooja patched"}' 
- </msg>
-<msg time="2026-02-02T15:03:06.684702" level="INFO">PATCH Response : url=http://127.0.0.1:5000/users/2 
- status=200, reason=OK 
- headers={'Server': 'Werkzeug/3.1.5 Python/3.14.2', 'Date': 'Mon, 02 Feb 2026 09:33:06 GMT', 'Content-Type': 'application/json', 'Content-Length': '41', 'Connection': 'close'} 
- body={
-  "id": 2,
-  "name": "Pooja patched"
-}
- 
- </msg>
-<msg time="2026-02-02T15:03:06.684792" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>api</arg>
-<arg>/users/2</arg>
-<arg>json=${data}</arg>
-<doc>Sends a PATCH request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.681876" elapsed="0.002934"/>
-</kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>200</arg>
-<arg>${response}</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.685321" elapsed="0.000370"/>
-</kw>
+<if>
+<branch type="IF" condition="${age} &gt;= 18">
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-02-02T15:03:06.686779" level="INFO">{'id': 2, 'name': 'Pooja patched'}</msg>
-<arg>${response.json()}</arg>
-<arg>console=True</arg>
+<msg time="2026-02-02T19:19:20.182289" level="INFO">Eligible to vote</msg>
+<arg>Eligible to vote</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.686156" elapsed="0.000865"/>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2026-02-02T15:03:06.679722" elapsed="0.007502"/>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
+</if>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
 </test>
-<test id="s1-t4" name="Verify Get All Users" line="33">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2026-02-02T15:03:06.688115" level="INFO">Creating Session using : alias=api, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>api</arg>
-<arg>${BASE_URL}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2026-02-02T15:03:06.687969" elapsed="0.000270"/>
+<test id="s1-t4" name="IF ELSE Example" line="26">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.182289" level="INFO">${num} = 5</msg>
+<var>${num}</var>
+<arg>5</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
 </kw>
-<kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-02-02T15:03:06.691324" level="INFO">GET Request : url=http://127.0.0.1:5000/users 
- path_url=/users 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2026-02-02T15:03:06.691390" level="INFO">GET Response : url=http://127.0.0.1:5000/users 
- status=200, reason=OK 
- headers={'Server': 'Werkzeug/3.1.5 Python/3.14.2', 'Date': 'Mon, 02 Feb 2026 09:33:06 GMT', 'Content-Type': 'application/json', 'Content-Length': '141', 'Connection': 'close'} 
- body=[
-  {
-    "id": 1,
-    "name": "Prashant"
-  },
-  {
-    "id": 2,
-    "name": "Pooja patched"
-  },
-  {
-    "id": 3,
-    "name": "varsha"
-  }
-]
- 
- </msg>
-<msg time="2026-02-02T15:03:06.691500" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>api</arg>
-<arg>/users</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.688592" elapsed="0.002928"/>
-</kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>200</arg>
-<arg>${response}</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.691927" elapsed="0.000209"/>
-</kw>
+<if>
+<branch type="IF" condition="${num} &gt; 10">
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-02-02T15:03:06.693043" level="INFO">[{'id': 1, 'name': 'Prashant'}, {'id': 2, 'name': 'Pooja patched'}, {'id': 3, 'name': 'varsha'}]</msg>
-<arg>${response.json()}</arg>
-<arg>console=True</arg>
+<arg>Greater than 10</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.692400" elapsed="0.000874"/>
+<status status="NOT RUN" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2026-02-02T15:03:06.687587" elapsed="0.005881"/>
-</test>
-<test id="s1-t5" name="Verify Get Single User" line="40">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2026-02-02T15:03:06.694289" level="INFO">Creating Session using : alias=api, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>api</arg>
-<arg>${BASE_URL}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2026-02-02T15:03:06.694170" elapsed="0.000235"/>
-</kw>
-<kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-02-02T15:03:06.696970" level="INFO">GET Request : url=http://127.0.0.1:5000/users/2 
- path_url=/users/2 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2026-02-02T15:03:06.697027" level="INFO">GET Response : url=http://127.0.0.1:5000/users/2 
- status=200, reason=OK 
- headers={'Server': 'Werkzeug/3.1.5 Python/3.14.2', 'Date': 'Mon, 02 Feb 2026 09:33:06 GMT', 'Content-Type': 'application/json', 'Content-Length': '41', 'Connection': 'close'} 
- body={
-  "id": 2,
-  "name": "Pooja patched"
-}
- 
- </msg>
-<msg time="2026-02-02T15:03:06.697116" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>api</arg>
-<arg>/users/2</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.694561" elapsed="0.002574"/>
-</kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>200</arg>
-<arg>${response}</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.697428" elapsed="0.000183"/>
-</kw>
+<status status="NOT RUN" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-02-02T15:03:06.698760" level="INFO">{'id': 2, 'name': 'Pooja patched'}</msg>
-<arg>${response.json()}</arg>
-<arg>console=True</arg>
+<msg time="2026-02-02T19:19:20.182289" level="INFO">Less than or equal to 10</msg>
+<arg>Less than or equal to 10</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.697862" elapsed="0.001086"/>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2026-02-02T15:03:06.693889" elapsed="0.005262"/>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
+</if>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.000000"/>
 </test>
-<test id="s1-t6" name="Verify Get Single User Not Found" line="47">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2026-02-02T15:03:06.700214" level="INFO">Creating Session using : alias=api, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>api</arg>
-<arg>${BASE_URL}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2026-02-02T15:03:06.699981" elapsed="0.000464"/>
+<test id="s1-t5" name="IF ELSE IF Example" line="37">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.193265" level="INFO">${marks} = 75</msg>
+<var>${marks}</var>
+<arg>75</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
 </kw>
-<kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-02-02T15:03:06.704738" level="INFO">GET Request : url=http://127.0.0.1:5000/users/99999 
- path_url=/users/99999 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2026-02-02T15:03:06.704841" level="INFO">GET Response : url=http://127.0.0.1:5000/users/99999 
- status=404, reason=NOT FOUND 
- headers={'Server': 'Werkzeug/3.1.5 Python/3.14.2', 'Date': 'Mon, 02 Feb 2026 09:33:06 GMT', 'Content-Type': 'application/json', 'Content-Length': '34', 'Connection': 'close'} 
- body={
-  "message": "user not found"
-}
- 
- </msg>
-<msg time="2026-02-02T15:03:06.704992" level="INFO">${response} = &lt;Response [404]&gt;</msg>
-<var>${response}</var>
-<arg>api</arg>
-<arg>/users/99999</arg>
-<arg>expected_status=404</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.700746" elapsed="0.004273"/>
-</kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>404</arg>
-<arg>${response}</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.705363" elapsed="0.000331"/>
-</kw>
+<if>
+<branch type="IF" condition="${marks} &gt;= 90">
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-02-02T15:03:06.706897" level="INFO">{'message': 'user not found'}</msg>
-<arg>${response.json()}</arg>
-<arg>console=True</arg>
+<arg>Grade A</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.706026" elapsed="0.001060"/>
+<status status="NOT RUN" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2026-02-02T15:03:06.699574" elapsed="0.007754"/>
-</test>
-<test id="s1-t7" name="Verify Delete User By UserId" line="54">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2026-02-02T15:03:06.708278" level="INFO">Creating Session using : alias=api, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>api</arg>
-<arg>${BASE_URL}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2026-02-02T15:03:06.708132" elapsed="0.000271"/>
-</kw>
-<kw name="DELETE On Session" owner="RequestsLibrary">
-<msg time="2026-02-02T15:03:06.711909" level="INFO">DELETE Request : url=http://127.0.0.1:5000/users/2 
- path_url=/users/2 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
- body=None 
- </msg>
-<msg time="2026-02-02T15:03:06.712025" level="INFO">DELETE Response : url=http://127.0.0.1:5000/users/2 
- status=200, reason=OK 
- headers={'Server': 'Werkzeug/3.1.5 Python/3.14.2', 'Date': 'Mon, 02 Feb 2026 09:33:06 GMT', 'Content-Type': 'application/json', 'Content-Length': '41', 'Connection': 'close'} 
- body={
-  "id": 2,
-  "name": "Pooja patched"
-}
- 
- </msg>
-<msg time="2026-02-02T15:03:06.712210" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>api</arg>
-<arg>/users/2</arg>
-<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.708726" elapsed="0.003518"/>
-</kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>200</arg>
-<arg>${response}</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.712712" elapsed="0.000423"/>
-</kw>
+<status status="NOT RUN" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE IF" condition="${marks} &gt;= 75">
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-02-02T15:03:06.713911" level="INFO">{'id': 2, 'name': 'Pooja patched'}</msg>
-<arg>${response.json()}</arg>
-<arg>console=True</arg>
+<msg time="2026-02-02T19:19:20.193265" level="INFO">Grade B</msg>
+<arg>Grade B</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.713368" elapsed="0.000810"/>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
 </kw>
-<kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-02-02T15:03:06.717488" level="INFO">GET Request : url=http://127.0.0.1:5000/users/2 
- path_url=/users/2 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2026-02-02T15:03:06.717647" level="INFO">GET Response : url=http://127.0.0.1:5000/users/2 
- status=404, reason=NOT FOUND 
- headers={'Server': 'Werkzeug/3.1.5 Python/3.14.2', 'Date': 'Mon, 02 Feb 2026 09:33:06 GMT', 'Content-Type': 'application/json', 'Content-Length': '34', 'Connection': 'close'} 
- body={
-  "message": "user not found"
-}
- 
- </msg>
-<msg time="2026-02-02T15:03:06.720008" level="INFO">${response} = &lt;Response [404]&gt;</msg>
-<var>${response}</var>
-<arg>api</arg>
-<arg>/users/2</arg>
-<arg>expected_status=404</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.714383" elapsed="0.005689"/>
-</kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>404</arg>
-<arg>${response}</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.720528" elapsed="0.000422"/>
-</kw>
-<status status="PASS" start="2026-02-02T15:03:06.707779" elapsed="0.013804"/>
-</test>
-<test id="s1-t8" name="Verify Get All User Again" line="65">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2026-02-02T15:03:06.723060" level="INFO">Creating Session using : alias=api, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>api</arg>
-<arg>${BASE_URL}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2026-02-02T15:03:06.722823" elapsed="0.000430"/>
-</kw>
-<kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-02-02T15:03:06.726584" level="INFO">GET Request : url=http://127.0.0.1:5000/users 
- path_url=/users 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2026-02-02T15:03:06.726691" level="INFO">GET Response : url=http://127.0.0.1:5000/users 
- status=200, reason=OK 
- headers={'Server': 'Werkzeug/3.1.5 Python/3.14.2', 'Date': 'Mon, 02 Feb 2026 09:33:06 GMT', 'Content-Type': 'application/json', 'Content-Length': '91', 'Connection': 'close'} 
- body=[
-  {
-    "id": 1,
-    "name": "Prashant"
-  },
-  {
-    "id": 3,
-    "name": "varsha"
-  }
-]
- 
- </msg>
-<msg time="2026-02-02T15:03:06.726850" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>api</arg>
-<arg>/users</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.723533" elapsed="0.003343"/>
-</kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>200</arg>
-<arg>${response}</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.727229" elapsed="0.000263"/>
-</kw>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-02-02T15:03:06.728394" level="INFO">[{'id': 1, 'name': 'Prashant'}, {'id': 3, 'name': 'varsha'}]</msg>
-<arg>${response.json()}</arg>
-<arg>console=True</arg>
+<arg>Grade C</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-02-02T15:03:06.727750" elapsed="0.000804"/>
+<status status="NOT RUN" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2026-02-02T15:03:06.722312" elapsed="0.006437"/>
+<status status="NOT RUN" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</if>
+<status status="PASS" start="2026-02-02T19:19:20.182289" elapsed="0.010976"/>
 </test>
-<status status="PASS" start="2026-02-02T15:03:06.549196" elapsed="0.180527"/>
+<test id="s1-t6" name="Inline IF Example" line="50">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.193265" level="INFO">${status} = PASS</msg>
+<var>${status}</var>
+<arg>PASS</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${status}' == 'PASS'">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.193265" level="INFO">Test Passed</msg>
+<arg>Test Passed</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</if>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</test>
+<test id="s1-t7" name="FOR Loop Basic" line="59">
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.193265" level="INFO">Item: one</msg>
+<arg>Item: ${item}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</kw>
+<var name="${item}">one</var>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.193265" level="INFO">Item: two</msg>
+<arg>Item: ${item}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</kw>
+<var name="${item}">two</var>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.193265" level="INFO">Item: three</msg>
+<arg>Item: ${item}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</kw>
+<var name="${item}">three</var>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</iter>
+<var>${item}</var>
+<value>one</value>
+<value>two</value>
+<value>three</value>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</for>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</test>
+<test id="s1-t8" name="FOR Loop With List" line="70">
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.193265" level="INFO">Color: Red</msg>
+<arg>Color: ${color}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</kw>
+<var name="${color}">Red</var>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.193265" level="INFO">Color: Green</msg>
+<arg>Color: ${color}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</kw>
+<var name="${color}">Green</var>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.193265" level="INFO">Color: Blue</msg>
+<arg>Color: ${color}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</kw>
+<var name="${color}">Blue</var>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</iter>
+<var>${color}</var>
+<value>@{COLORS}</value>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</for>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</test>
+<test id="s1-t9" name="FOR Loop Range" line="78">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.193265" level="INFO">Number: 1</msg>
+<arg>Number: ${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.193265" level="INFO">Number: 2</msg>
+<arg>Number: ${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.193265" level="INFO">Number: 3</msg>
+<arg>Number: ${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.193265" level="INFO">Number: 4</msg>
+<arg>Number: ${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.193265" level="INFO">Number: 5</msg>
+<arg>Number: ${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</kw>
+<var name="${i}">5</var>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>6</value>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</for>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</test>
+<test id="s1-t10" name="FOR Loop With Step" line="86">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.193265" level="INFO">Value: 0</msg>
+<arg>Value: ${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.193265" level="INFO">Value: 2</msg>
+<arg>Value: ${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.193265" level="INFO">Value: 4</msg>
+<arg>Value: ${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.209035" level="INFO">Value: 6</msg>
+<arg>Value: ${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.015770"/>
+</kw>
+<var name="${i}">6</var>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.015770"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.209035" level="INFO">Value: 8</msg>
+<arg>Value: ${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.209035" elapsed="0.000000"/>
+</kw>
+<var name="${i}">8</var>
+<status status="PASS" start="2026-02-02T19:19:20.209035" elapsed="0.000000"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>10</value>
+<value>2</value>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.015770"/>
+</for>
+<status status="PASS" start="2026-02-02T19:19:20.193265" elapsed="0.015770"/>
+</test>
+<test id="s1-t11" name="FOR Loop Enumerate" line="94">
+<for flavor="IN ENUMERATE">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.209035" level="INFO">0 = a</msg>
+<arg>${index} = ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.209035" elapsed="0.000000"/>
+</kw>
+<var name="${index}">0</var>
+<var name="${value}">a</var>
+<status status="PASS" start="2026-02-02T19:19:20.209035" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.209035" level="INFO">1 = b</msg>
+<arg>${index} = ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.209035" elapsed="0.000000"/>
+</kw>
+<var name="${index}">1</var>
+<var name="${value}">b</var>
+<status status="PASS" start="2026-02-02T19:19:20.209035" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.209035" level="INFO">2 = c</msg>
+<arg>${index} = ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.209035" elapsed="0.000000"/>
+</kw>
+<var name="${index}">2</var>
+<var name="${value}">c</var>
+<status status="PASS" start="2026-02-02T19:19:20.209035" elapsed="0.000000"/>
+</iter>
+<var>${index}</var>
+<var>${value}</var>
+<value>a</value>
+<value>b</value>
+<value>c</value>
+<status status="PASS" start="2026-02-02T19:19:20.209035" elapsed="0.000000"/>
+</for>
+<status status="PASS" start="2026-02-02T19:19:20.209035" elapsed="0.000000"/>
+</test>
+<test id="s1-t12" name="FOR Loop Zip" line="106">
+<for flavor="IN ZIP">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<arg>${u} / ${p}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-02-02T19:19:20.209035" elapsed="0.000000"/>
+</kw>
+<var name="${u}"/>
+<var name="${p}"/>
+<status status="NOT RUN" start="2026-02-02T19:19:20.209035" elapsed="0.000000"/>
+</iter>
+<msg time="2026-02-02T19:19:20.209035" level="FAIL">FOR IN ZIP items must be list-like, but item 1 is string.</msg>
+<var>${u}</var>
+<var>${p}</var>
+<value>@{USERS}</value>
+<value>@{PWDS}</value>
+<status status="FAIL" start="2026-02-02T19:19:20.209035" elapsed="0.000000">FOR IN ZIP items must be list-like, but item 1 is string.</status>
+</for>
+<status status="FAIL" start="2026-02-02T19:19:20.209035" elapsed="0.000000">FOR IN ZIP items must be list-like, but item 1 is string.</status>
+</test>
+<test id="s1-t13" name="Nested FOR Loop" line="114">
+<for flavor="IN RANGE">
+<iter>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.209035" level="INFO">i=1, j=1</msg>
+<arg>i=${i}, j=${j}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.209035" elapsed="0.000000"/>
+</kw>
+<var name="${j}">1</var>
+<status status="PASS" start="2026-02-02T19:19:20.209035" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.209035" level="INFO">i=1, j=2</msg>
+<arg>i=${i}, j=${j}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.209035" elapsed="0.000000"/>
+</kw>
+<var name="${j}">2</var>
+<status status="PASS" start="2026-02-02T19:19:20.209035" elapsed="0.000000"/>
+</iter>
+<var>${j}</var>
+<value>1</value>
+<value>3</value>
+<status status="PASS" start="2026-02-02T19:19:20.209035" elapsed="0.000000"/>
+</for>
+<var name="${i}">1</var>
+<status status="PASS" start="2026-02-02T19:19:20.209035" elapsed="0.000000"/>
+</iter>
+<iter>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.209035" level="INFO">i=2, j=1</msg>
+<arg>i=${i}, j=${j}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.209035" elapsed="0.000000"/>
+</kw>
+<var name="${j}">1</var>
+<status status="PASS" start="2026-02-02T19:19:20.209035" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.216285" level="INFO">i=2, j=2</msg>
+<arg>i=${i}, j=${j}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</kw>
+<var name="${j}">2</var>
+<status status="PASS" start="2026-02-02T19:19:20.209035" elapsed="0.007250"/>
+</iter>
+<var>${j}</var>
+<value>1</value>
+<value>3</value>
+<status status="PASS" start="2026-02-02T19:19:20.209035" elapsed="0.007250"/>
+</for>
+<var name="${i}">2</var>
+<status status="PASS" start="2026-02-02T19:19:20.209035" elapsed="0.007250"/>
+</iter>
+<iter>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.216285" level="INFO">i=3, j=1</msg>
+<arg>i=${i}, j=${j}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</kw>
+<var name="${j}">1</var>
+<status status="PASS" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.216285" level="INFO">i=3, j=2</msg>
+<arg>i=${i}, j=${j}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</kw>
+<var name="${j}">2</var>
+<status status="PASS" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</iter>
+<var>${j}</var>
+<value>1</value>
+<value>3</value>
+<status status="PASS" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</for>
+<var name="${i}">3</var>
+<status status="PASS" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>4</value>
+<status status="PASS" start="2026-02-02T19:19:20.209035" elapsed="0.007250"/>
+</for>
+<status status="PASS" start="2026-02-02T19:19:20.209035" elapsed="0.007250"/>
+</test>
+<test id="s1-t14" name="FOR Loop With IF" line="124">
+<for flavor="IN RANGE">
+<iter>
+<if>
+<branch type="IF" condition="${n} == 3">
+<kw name="Log" owner="BuiltIn">
+<arg>Found 3</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</if>
+<var name="${n}">1</var>
+<status status="PASS" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="${n} == 3">
+<kw name="Log" owner="BuiltIn">
+<arg>Found 3</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</if>
+<var name="${n}">2</var>
+<status status="PASS" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="${n} == 3">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.216285" level="INFO">Found 3</msg>
+<arg>Found 3</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</if>
+<var name="${n}">3</var>
+<status status="PASS" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="${n} == 3">
+<kw name="Log" owner="BuiltIn">
+<arg>Found 3</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</if>
+<var name="${n}">4</var>
+<status status="PASS" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="${n} == 3">
+<kw name="Log" owner="BuiltIn">
+<arg>Found 3</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</if>
+<var name="${n}">5</var>
+<status status="PASS" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</iter>
+<var>${n}</var>
+<value>1</value>
+<value>6</value>
+<status status="PASS" start="2026-02-02T19:19:20.216285" elapsed="0.000000"/>
+</for>
+<status status="PASS" start="2026-02-02T19:19:20.216285" elapsed="0.004097"/>
+</test>
+<test id="s1-t15" name="BREAK Example" line="134">
+<for flavor="IN RANGE">
+<iter>
+<if>
+<branch type="IF" condition="${i} == 5">
+<break>
+<status status="NOT RUN" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.220382" level="INFO">1</msg>
+<arg>${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="${i} == 5">
+<break>
+<status status="NOT RUN" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.220382" level="INFO">2</msg>
+<arg>${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="${i} == 5">
+<break>
+<status status="NOT RUN" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.220382" level="INFO">3</msg>
+<arg>${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="${i} == 5">
+<break>
+<status status="NOT RUN" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.220382" level="INFO">4</msg>
+<arg>${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="${i} == 5">
+<break>
+<status status="PASS" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</break>
+<status status="PASS" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</kw>
+<var name="${i}">5</var>
+<status status="PASS" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>10</value>
+<status status="PASS" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</for>
+<status status="PASS" start="2026-02-02T19:19:20.220382" elapsed="0.000000"/>
+</test>
+<test id="s1-t16" name="CONTINUE Example" line="145">
+<for flavor="IN RANGE">
+<iter>
+<if>
+<branch type="IF" condition="${i} == 3">
+<continue>
+<status status="NOT RUN" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</continue>
+<status status="NOT RUN" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.225155" level="INFO">1</msg>
+<arg>${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="${i} == 3">
+<continue>
+<status status="NOT RUN" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</continue>
+<status status="NOT RUN" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.225155" level="INFO">2</msg>
+<arg>${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="${i} == 3">
+<continue>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</continue>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="${i} == 3">
+<continue>
+<status status="NOT RUN" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</continue>
+<status status="NOT RUN" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.225155" level="INFO">4</msg>
+<arg>${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="${i} == 3">
+<continue>
+<status status="NOT RUN" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</continue>
+<status status="NOT RUN" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.225155" level="INFO">5</msg>
+<arg>${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</kw>
+<var name="${i}">5</var>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>6</value>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</for>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</test>
+<test id="s1-t17" name="WHILE Loop Example" line="155">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.225155" level="INFO">${i} = 1</msg>
+<var>${i}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</kw>
+<while condition="${i} &lt;= 5">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.225155" level="INFO">Value: 1</msg>
+<arg>Value: ${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.225155" level="INFO">${i} = 2</msg>
+<var>${i}</var>
+<arg>${i} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.225155" level="INFO">Value: 2</msg>
+<arg>Value: ${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.225155" level="INFO">${i} = 3</msg>
+<var>${i}</var>
+<arg>${i} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.225155" level="INFO">Value: 3</msg>
+<arg>Value: ${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.225155" level="INFO">${i} = 4</msg>
+<var>${i}</var>
+<arg>${i} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.225155" level="INFO">Value: 4</msg>
+<arg>Value: ${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.225155" level="INFO">${i} = 5</msg>
+<var>${i}</var>
+<arg>${i} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.225155" level="INFO">Value: 5</msg>
+<arg>Value: ${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.225155" level="INFO">${i} = 6</msg>
+<var>${i}</var>
+<arg>${i} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</iter>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</while>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</test>
+<test id="s1-t18" name="WHILE Loop With BREAK" line="164">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.225155" level="INFO">${i} = 1</msg>
+<var>${i}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</kw>
+<while condition="True">
+<iter>
+<if>
+<branch type="IF" condition="${i} == 4">
+<break>
+<status status="NOT RUN" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.225155" level="INFO">1</msg>
+<arg>${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.225155" level="INFO">${i} = 2</msg>
+<var>${i}</var>
+<arg>${i} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="${i} == 4">
+<break>
+<status status="NOT RUN" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.225155" level="INFO">2</msg>
+<arg>${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.225155" level="INFO">${i} = 3</msg>
+<var>${i}</var>
+<arg>${i} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="${i} == 4">
+<break>
+<status status="NOT RUN" start="2026-02-02T19:19:20.225155" elapsed="0.000000"/>
+</break>
+<status status="NOT RUN" start="2026-02-02T19:19:20.225155" elapsed="0.013909"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.013909"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.239064" level="INFO">3</msg>
+<arg>${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.239064" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.239064" level="INFO">${i} = 4</msg>
+<var>${i}</var>
+<arg>${i} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.239064" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.013909"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="${i} == 4">
+<break>
+<status status="PASS" start="2026-02-02T19:19:20.239064" elapsed="0.000000"/>
+</break>
+<status status="PASS" start="2026-02-02T19:19:20.239064" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.239064" elapsed="0.000000"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-02-02T19:19:20.239064" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${i}</var>
+<arg>${i} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-02-02T19:19:20.239064" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-02T19:19:20.239064" elapsed="0.000000"/>
+</iter>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.013909"/>
+</while>
+<status status="PASS" start="2026-02-02T19:19:20.225155" elapsed="0.013909"/>
+</test>
+<test id="s1-t19" name="Try Except Example" line="178">
+<try>
+<branch type="TRY">
+<kw name="Fail" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.240803" level="FAIL">Something went wrong</msg>
+<arg>Something went wrong</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="FAIL" start="2026-02-02T19:19:20.240803" elapsed="0.000000">Something went wrong</status>
+</kw>
+<status status="FAIL" start="2026-02-02T19:19:20.240803" elapsed="0.000000">Something went wrong</status>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.240803" level="INFO">Error handled</msg>
+<arg>Error handled</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.240803" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-02T19:19:20.240803" elapsed="0.000000"/>
+</branch>
+<branch type="FINALLY">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.240803" level="INFO">Always executed</msg>
+<arg>Always executed</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.240803" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-02T19:19:20.240803" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T19:19:20.240803" elapsed="0.000000"/>
+</try>
+<status status="PASS" start="2026-02-02T19:19:20.240803" elapsed="0.000000"/>
+</test>
+<test id="s1-t20" name="Run Keyword If Example" line="191">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.243438" level="INFO">${status} = PASS</msg>
+<var>${status}</var>
+<arg>PASS</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.243438" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.245860" level="INFO">Test Passed</msg>
+<arg>Test Passed</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.243438" elapsed="0.002422"/>
+</kw>
+<arg>'${status}' == 'PASS'</arg>
+<arg>Log</arg>
+<arg>Test Passed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.243438" elapsed="0.002422"/>
+</kw>
+<status status="PASS" start="2026-02-02T19:19:20.243438" elapsed="0.002422"/>
+</test>
+<test id="s1-t21" name="Run Keyword Unless Example" line="198">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.245860" level="INFO">${status} = FAIL</msg>
+<var>${status}</var>
+<arg>FAIL</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.245860" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.245860" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T19:19:20.245860" level="INFO">Test Failed</msg>
+<arg>Test Failed</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T19:19:20.245860" elapsed="0.000000"/>
+</kw>
+<arg>'${status}' == 'PASS'</arg>
+<arg>Log</arg>
+<arg>Test Failed</arg>
+<doc>*DEPRECATED since RF 5.0. Use native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="PASS" start="2026-02-02T19:19:20.245860" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-02T19:19:20.245860" elapsed="0.000000"/>
+</test>
+<status status="FAIL" start="2026-02-02T19:19:20.149128" elapsed="0.096732"/>
 </suite>
 <statistics>
 <total>
-<stat pass="8" fail="0" skip="0">All Tests</stat>
+<stat pass="20" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="TC009 FlaskAPI" id="s1" pass="8" fail="0" skip="0">TC009 FlaskAPI</stat>
+<stat name="TC008 loop" id="s1" pass="20" fail="1" skip="0">TC008 loop</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2026-02-02T19:19:20.245860" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
 </errors>
 </robot>
