@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+        }
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #response {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Patient Registration</h2>
+
+    <label>Patient Name</label>
+    <input type="text" id="name">
+
+    <label>Age</label>
+    <input type="number" id="age">
+
+    <label>Gender</label>
+    <select id="gender">
+        <option value="">Select</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+
+    <label>Contact Number</label>
+    <input type="text" id="contact">
+
+    <label>Disease</label>
+    <input type="text" id="disease">
+
+    <label>Doctor Assigned</label>
+    <input type="text" id="doctor">
+
+    <button onclick="registerPatient()">Register</button>
+
+    <div id="response"></div>
+</div>
+
+<script>
+    function registerPatient() {
+        const payload = {
+            name: document.getElementById("name").value,
+            age: document.getElementById("age").value,
+            gender: document.getElementById("gender").value,
+            contact: document.getElementById("contact").value,
+            disease: document.getElementById("disease").value,
+            doctor: document.getElementById("doctor").value
+        };
+
+        fetch("/api/patients", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("response").innerText =
+                data.status === "success"
+                ? "Patient registered successfully"
+                : data.message;
+        })
+        .catch(error => {
+            document.getElementById("response").innerText = "Error occurred";
+        });
+    }
+</script>
+
+</body>
+</html>

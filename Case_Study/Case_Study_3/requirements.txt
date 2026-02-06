@@ -1,0 +1,9 @@
+Flask
+requests
+pytest
+pytest-xdist
+pytest-html
+beautifulsoup4
+lxml
+robotframework
+robotframework-seleniumlibrary
