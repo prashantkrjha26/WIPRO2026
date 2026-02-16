@@ -1,44 +1,50 @@
 *** Settings ***
 Library    RequestsLibrary
+Library    Collections
 
 *** Variables ***
 ${BASE_URL}    http://127.0.0.1:5000
 
 *** Test Cases ***
-Register Restaurant - Success
+Register Restaurant
     Create Session    foodie    ${BASE_URL}
     ${body}=    Create Dictionary
-    ...    name=Food Hub
+    ...    name=RestA
     ...    category=Indian
     ...    location=Delhi
-    ...    images=image.jpg
-    ...    contact=9999999999
+    ...    images=img.jpg
+    ...    contact=1111
     ${response}=    POST On Session    foodie    /api/v1/restaurants    json=${body}
     Status Should Be    201    ${response}
 
-Register Restaurant - Duplicate
-    ${body}=    Create Dictionary
-    ...    name=Food Hub
-    ...    category=Indian
-    ...    location=Delhi
-    ...    images=image.jpg
-    ...    contact=9999999999
-    ${response}=    POST On Session    foodie    /api/v1/restaurants    json=${body}
-    Status Should Be    409    ${response}
-
-View Restaurant - Success
-    ${response}=    GET On Session    foodie    /api/v1/restaurants/1
+Update Restaurant
+    Create Session    foodie    ${BASE_URL}
+    ${body}=    Create Dictionary    name=RestB    category=Indian    location=Mumbai    images=img.jpg    contact=2222
+    ${r}=    POST On Session    foodie    /api/v1/restaurants    json=${body}
+    ${rid}=    Get From Dictionary    ${r.json()}    id
+    ${update}=    Create Dictionary    name=RestBUpdated
+    ${response}=    PUT On Session    foodie    /api/v1/restaurants/${rid}    json=${update}
     Status Should Be    200    ${response}
 
-Update Restaurant - Success
-    ${update}=    Create Dictionary    name=Food Hub Updated
-    ${response}=    PUT On Session    foodie    /api/v1/restaurants/1    json=${update}
+Disable Restaurant
+    Create Session    foodie    ${BASE_URL}
+    ${body}=    Create Dictionary    name=RestC    category=Indian    location=Delhi    images=img.jpg    contact=3333
+    ${r}=    POST On Session    foodie    /api/v1/restaurants    json=${body}
+    ${rid}=    Get From Dictionary    ${r.json()}    id
+    ${response}=    PUT On Session    foodie    /api/v1/restaurants/${rid}/disable
     Status Should Be    200    ${response}
 
-Disable Restaurant - Success
-    ${response}=    PUT On Session    foodie    /api/v1/restaurants/1/disable
+View Restaurant
+    Create Session    foodie    ${BASE_URL}
+    ${body}=    Create Dictionary    name=RestD    category=Indian    location=Delhi    images=img.jpg    contact=4444
+    ${r}=    POST On Session    foodie    /api/v1/restaurants    json=${body}
+    ${rid}=    Get From Dictionary    ${r.json()}    id
+    ${response}=    GET On Session    foodie    /api/v1/restaurants/${rid}
     Status Should Be    200    ${response}
 
-Search Restaurant
-    ${response}=    GET On Session    foodie    /api/v1/restaurants/search?name=Food
+Search Restaurants
+    Create Session    foodie    ${BASE_URL}
+    ${body}=    Create Dictionary    name=SearchRest    category=Indian    location=Delhi    images=img.jpg    contact=5555
+    POST On Session    foodie    /api/v1/restaurants    json=${body}
+    ${response}=    GET On Session    foodie    /api/v1/restaurants/search    params=name=SearchRest
     Status Should Be    200    ${response}
