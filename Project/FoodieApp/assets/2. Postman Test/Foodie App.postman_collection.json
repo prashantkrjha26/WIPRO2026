@@ -1,0 +1,2990 @@
+{
+  "info": {
+    "_postman_id": "7e824f43-3948-4b4b-8630-f11c2118a496",
+    "name": "Foodie App",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51690181",
+    "_collection_link": "https://go.postman.co/collection/51690181-7e824f43-3948-4b4b-8630-f11c2118a496?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "1. Restaurant Module",
+      "item": [
+        {
+          "name": "1. Register Restaurant",
+          "item": [
+            {
+              "name": "Empty Body",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/restaurants",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "restaurants"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Empty Body",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/restaurants",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "restaurants"
+                      ]
+                    }
+                  },
+                  "status": "BAD REQUEST",
+                  "code": 400,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 15:56:58 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "41"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"error\": \"Missing required fields\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Resturant Registered",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Food Hub\",\r\n  \"category\": \"Veg\",\r\n  \"location\": \"Delhi\",\r\n  \"images\": [\"img1.jpg\"],\r\n  \"contact\": \"9999999999\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/restaurants",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "restaurants"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Resturant Registered",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n  \"name\": \"Food Hub\",\r\n  \"category\": \"Veg\",\r\n  \"location\": \"Delhi\",\r\n  \"images\": [\"img1.jpg\"],\r\n  \"contact\": \"9999999999\"\r\n}\r\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/restaurants",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "restaurants"
+                      ]
+                    }
+                  },
+                  "status": "CREATED",
+                  "code": 201,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 15:58:38 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "181"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"approved\": false,\n    \"category\": \"Veg\",\n    \"contact\": \"9999999999\",\n    \"enabled\": true,\n    \"id\": 1,\n    \"images\": [\n        \"img1.jpg\"\n    ],\n    \"location\": \"Delhi\",\n    \"name\": \"Food Hub\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Dublicate Restaurant",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Food Hub\",\r\n  \"category\": \"Veg\",\r\n  \"location\": \"Delhi\",\r\n  \"images\": [\"img1.jpg\"],\r\n  \"contact\": \"9999999999\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/restaurants",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "restaurants"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Dublicate Restaurant",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n  \"name\": \"Food Hub\",\r\n  \"category\": \"Veg\",\r\n  \"location\": \"Delhi\",\r\n  \"images\": [\"img1.jpg\"],\r\n  \"contact\": \"9999999999\"\r\n}\r\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/restaurants",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "restaurants"
+                      ]
+                    }
+                  },
+                  "status": "CONFLICT",
+                  "code": 409,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 16:00:57 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "43"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"error\": \"Restaurant already exists\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "2. Update Restaurant Details",
+          "item": [
+            {
+              "name": "Restaurant Not Found to Update",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"location\": \"Mumbai\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/restaurants/99999",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "restaurants",
+                    "99999"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Restaurant Not Found to Update",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n  \"location\": \"Mumbai\"\r\n}\r\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/restaurants/99999",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "restaurants",
+                        "99999"
+                      ]
+                    }
+                  },
+                  "status": "NOT FOUND",
+                  "code": 404,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 16:04:47 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "38"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"error\": \"Restaurant not found\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Updated Restaurant",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"location\": \"Mumbai\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/restaurants/1",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "restaurants",
+                    "1"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Updated Restaurant",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n  \"location\": \"Mumbai\"\r\n}\r\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/restaurants/1",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "restaurants",
+                        "1"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 16:05:52 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "182"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"approved\": false,\n    \"category\": \"Veg\",\n    \"contact\": \"9999999999\",\n    \"enabled\": true,\n    \"id\": 1,\n    \"images\": [\n        \"img1.jpg\"\n    ],\n    \"location\": \"Mumbai\",\n    \"name\": \"Food Hub\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "3. Disable Restaurant",
+          "item": [
+            {
+              "name": "Restaurant Not Found to Disable",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/restaurants/99999/disable",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "restaurants",
+                    "99999",
+                    "disable"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Restaurant Not Found to Disable",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/restaurants/99999/disable",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "restaurants",
+                        "99999",
+                        "disable"
+                      ]
+                    }
+                  },
+                  "status": "NOT FOUND",
+                  "code": 404,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 16:10:36 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "38"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"error\": \"Restaurant not found\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Restaurant Disabled",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/restaurants/1/disable",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "restaurants",
+                    "1",
+                    "disable"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Restaurant Disabled",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/restaurants/1/disable",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "restaurants",
+                        "1",
+                        "disable"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 16:16:30 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "39"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"message\": \"Restaurant disabled\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "4. View Restaurant Profile",
+          "item": [
+            {
+              "name": "Restaurant Profile Not Found",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/restaurants/99999",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "restaurants",
+                    "99999"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Restaurant Profile Not Found",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/restaurants/99999",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "restaurants",
+                        "99999"
+                      ]
+                    }
+                  },
+                  "status": "NOT FOUND",
+                  "code": 404,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 16:18:35 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "38"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"error\": \"Restaurant not found\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Restaurant Profile",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/restaurants/1",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "restaurants",
+                    "1"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Restaurant Profile",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/restaurants/1",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "restaurants",
+                        "1"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 16:20:50 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "183"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"approved\": false,\n    \"category\": \"Veg\",\n    \"contact\": \"9999999999\",\n    \"enabled\": false,\n    \"id\": 1,\n    \"images\": [\n        \"img1.jpg\"\n    ],\n    \"location\": \"Mumbai\",\n    \"name\": \"Food Hub\"\n}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2. Dish Module",
+      "item": [
+        {
+          "name": "5. Add Dish",
+          "item": [
+            {
+              "name": "Missing Data",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Paneer Butter Masala\",\r\n  \"type\": \"Veg\",\r\n  \"available_time\": \"10AM-10PM\",\r\n  \"image\": \"paneer.jpg\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/restaurants/1/dishes",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "restaurants",
+                    "1",
+                    "dishes"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Missing Data",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n  \"name\": \"Paneer Butter Masala\",\r\n  \"type\": \"Veg\",\r\n  \"available_time\": \"10AM-10PM\",\r\n  \"image\": \"paneer.jpg\"\r\n}\r\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/restaurants/1/dishes",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "restaurants",
+                        "1",
+                        "dishes"
+                      ]
+                    }
+                  },
+                  "status": "BAD REQUEST",
+                  "code": 400,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 16:34:32 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "41"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"error\": \"Missing required fields\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Dish Added",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Paneer Butter Masala\",\r\n  \"type\": \"Veg\",\r\n  \"price\": 250,\r\n  \"available_time\": \"10AM-10PM\",\r\n  \"image\": \"paneer.jpg\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/restaurants/1/dishes",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "restaurants",
+                    "1",
+                    "dishes"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Dish Added",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n  \"name\": \"Paneer Butter Masala\",\r\n  \"type\": \"Veg\",\r\n  \"price\": 250,\r\n  \"available_time\": \"10AM-10PM\",\r\n  \"image\": \"paneer.jpg\"\r\n}\r\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/restaurants/1/dishes",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "restaurants",
+                        "1",
+                        "dishes"
+                      ]
+                    }
+                  },
+                  "status": "CREATED",
+                  "code": 201,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 16:35:37 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "182"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"available_time\": \"10AM-10PM\",\n    \"enabled\": true,\n    \"id\": 1,\n    \"image\": \"paneer.jpg\",\n    \"name\": \"Paneer Butter Masala\",\n    \"price\": 250,\n    \"restaurant_id\": 1,\n    \"type\": \"Veg\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "6. Update Dish",
+          "item": [
+            {
+              "name": "Dish Not Found to Update",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"price\": 300\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/dishes/99999",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "dishes",
+                    "99999"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Dish Not Found to Update",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n  \"price\": 300\r\n}\r\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/dishes/99999",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "dishes",
+                        "99999"
+                      ]
+                    }
+                  },
+                  "status": "NOT FOUND",
+                  "code": 404,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 16:38:41 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "32"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"error\": \"Dish not found\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Dish Updated",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"price\": 300\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/dishes/1",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "dishes",
+                    "1"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Dish Updated",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n  \"price\": 300\r\n}\r\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/dishes/1",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "dishes",
+                        "1"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 16:39:49 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "182"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"available_time\": \"10AM-10PM\",\n    \"enabled\": true,\n    \"id\": 1,\n    \"image\": \"paneer.jpg\",\n    \"name\": \"Paneer Butter Masala\",\n    \"price\": 300,\n    \"restaurant_id\": 1,\n    \"type\": \"Veg\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "7. Enable / Disable Dish",
+          "item": [
+            {
+              "name": "Dish Not Found",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"enabled\": false\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/dishes/99999/status",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "dishes",
+                    "99999",
+                    "status"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Dish Not Found",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n  \"enabled\": false\r\n}\r\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/dishes/99999/status",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "dishes",
+                        "99999",
+                        "status"
+                      ]
+                    }
+                  },
+                  "status": "NOT FOUND",
+                  "code": 404,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 16:42:21 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "32"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"error\": \"Dish not found\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Dish Disabled",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"enabled\": false\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/dishes/1/status",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "dishes",
+                    "1",
+                    "status"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Dish Disabled",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n  \"enabled\": false\r\n}\r\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/dishes/1/status",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "dishes",
+                        "1",
+                        "status"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 16:43:29 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "39"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"message\": \"Dish status updated\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "8. Delete Dish",
+          "item": [
+            {
+              "name": "Dish Not Found to Delete",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/dishes/9999",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "dishes",
+                    "9999"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Dish Not Found to Delete",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/dishes/9999",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "dishes",
+                        "9999"
+                      ]
+                    }
+                  },
+                  "status": "NOT FOUND",
+                  "code": 404,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 16:48:50 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "32"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"error\": \"Dish not found\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Dish Deleted",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/dishes/1",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "dishes",
+                    "1"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Dish Deleted",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/dishes/1",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "dishes",
+                        "1"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 16:49:31 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "32"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"message\": \"Dish deleted\"\n}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3. Admin Module",
+      "item": [
+        {
+          "name": "9. Approve Restaurant",
+          "item": [
+            {
+              "name": "Restaurant Not Found to Approve",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/admin/restaurants/99999/approve",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "admin",
+                    "restaurants",
+                    "99999",
+                    "approve"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Restaurant Not Found to Approve",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/admin/restaurants/99999/approve",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "admin",
+                        "restaurants",
+                        "99999",
+                        "approve"
+                      ]
+                    }
+                  },
+                  "status": "NOT FOUND",
+                  "code": 404,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 16:53:22 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "38"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"error\": \"Restaurant not found\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Restaurant Approved",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/admin/restaurants/1/approve",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "admin",
+                    "restaurants",
+                    "1",
+                    "approve"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Restaurant Approved",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/admin/restaurants/1/approve",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "admin",
+                        "restaurants",
+                        "1",
+                        "approve"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 16:53:57 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "39"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"message\": \"Restaurant approved\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "10. Disable Restaurant",
+          "item": [
+            {
+              "name": "Restaurant Not Found to Disable",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/admin/restaurants/99999/disable",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "admin",
+                    "restaurants",
+                    "99999",
+                    "disable"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Restaurant Not Found to Disable",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/admin/restaurants/99999/disable",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "admin",
+                        "restaurants",
+                        "99999",
+                        "disable"
+                      ]
+                    }
+                  },
+                  "status": "NOT FOUND",
+                  "code": 404,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 16:57:14 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "38"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"error\": \"Restaurant not found\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Restaurant Disabled",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/admin/restaurants/1/disable",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "admin",
+                    "restaurants",
+                    "1",
+                    "disable"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Restaurant Disabled",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/admin/restaurants/1/disable",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "admin",
+                        "restaurants",
+                        "1",
+                        "disable"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 16:57:30 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "39"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"message\": \"Restaurant disabled\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "11. View Customer Feedback",
+          "item": [
+            {
+              "name": "Customer Feedback",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/admin/feedback",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "admin",
+                    "feedback"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Customer Feedback",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/admin/feedback",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "admin",
+                        "feedback"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 17:42:33 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "93"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"comment\": \"Excellent food\",\n        \"id\": 1,\n        \"order_id\": 1,\n        \"rating\": 5\n    }\n]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "12. View Order Status",
+          "item": [
+            {
+              "name": "Order Status",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/admin/orders",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "admin",
+                    "orders"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Order Status",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/admin/orders",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "admin",
+                        "orders"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 17:43:52 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "121"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"dishes\": [\n            1\n        ],\n        \"id\": 1,\n        \"restaurant_id\": 1,\n        \"status\": \"Placed\",\n        \"user_id\": 1\n    }\n]"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4. User / Customer Module",
+      "item": [
+        {
+          "name": "13. User Registration",
+          "item": [
+            {
+              "name": "User Registered",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Prashant\",\r\n  \"email\": \"test@mail.com\",\r\n  \"password\": \"123456\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/users/register",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "users",
+                    "register"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "User Registered",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n  \"name\": \"Prashant\",\r\n  \"email\": \"test@mail.com\",\r\n  \"password\": \"123456\"\r\n}\r\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/users/register",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "users",
+                        "register"
+                      ]
+                    }
+                  },
+                  "status": "CREATED",
+                  "code": 201,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 17:01:29 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "64"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"email\": \"test@mail.com\",\n    \"id\": 1,\n    \"name\": \"Prashant\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Dublicate User",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Prashant\",\r\n  \"email\": \"test@mail.com\",\r\n  \"password\": \"123456\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/users/register",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "users",
+                    "register"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Dublicate User",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n  \"name\": \"Prashant\",\r\n  \"email\": \"test@mail.com\",\r\n  \"password\": \"123456\"\r\n}\r\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/users/register",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "users",
+                        "register"
+                      ]
+                    }
+                  },
+                  "status": "CONFLICT",
+                  "code": 409,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 17:02:29 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "37"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"error\": \"User already exists\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "14. Search Restaurants",
+          "item": [
+            {
+              "name": "Restaurants Search",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Prashant\",\r\n  \"email\": \"test@mail.com\",\r\n  \"password\": \"123456\"\r\n}\r\n"
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/restaurants/search?name=&location=&dish=&rating=",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "restaurants",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": ""
+                    },
+                    {
+                      "key": "location",
+                      "value": ""
+                    },
+                    {
+                      "key": "dish",
+                      "value": ""
+                    },
+                    {
+                      "key": "rating",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Restaurants Search",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n  \"name\": \"Prashant\",\r\n  \"email\": \"test@mail.com\",\r\n  \"password\": \"123456\"\r\n}\r\n"
+                    },
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/restaurants/search?name=&location=&dish=&rating=",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "restaurants",
+                        "search"
+                      ],
+                      "query": [
+                        {
+                          "key": "name",
+                          "value": ""
+                        },
+                        {
+                          "key": "location",
+                          "value": ""
+                        },
+                        {
+                          "key": "dish",
+                          "value": ""
+                        },
+                        {
+                          "key": "rating",
+                          "value": ""
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 17:14:15 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "210"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"approved\": true,\n        \"category\": \"Veg\",\n        \"contact\": \"9999999999\",\n        \"enabled\": false,\n        \"id\": 1,\n        \"images\": [\n            \"img1.jpg\"\n        ],\n        \"location\": \"Mumbai\",\n        \"name\": \"Food Hub\"\n    }\n]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "15. Place Order",
+          "item": [
+            {
+              "name": "Missing Order Details",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"user_id\": 1,\r\n  \"restaurant_id\": 1\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/orders",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "orders"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Missing Order Details",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n  \"user_id\": 1,\r\n  \"restaurant_id\": 1\r\n}\r\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/orders",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "orders"
+                      ]
+                    }
+                  },
+                  "status": "BAD REQUEST",
+                  "code": 400,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 17:21:54 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "41"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"error\": \"Missing required fields\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Order Placed",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"user_id\": 1,\r\n  \"restaurant_id\": 1,\r\n  \"dishes\": [1]\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/orders",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "orders"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Order Placed",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n  \"user_id\": 1,\r\n  \"restaurant_id\": 1,\r\n  \"dishes\": [1]\r\n}\r\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/orders",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "orders"
+                      ]
+                    }
+                  },
+                  "status": "CREATED",
+                  "code": 201,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 17:24:56 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "99"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"dishes\": [\n        1\n    ],\n    \"id\": 1,\n    \"restaurant_id\": 1,\n    \"status\": \"Placed\",\n    \"user_id\": 1\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "16. Give Rating",
+          "item": [
+            {
+              "name": "Missing Rating Details",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"order_id\": 1,\r\n  \"comment\": \"Excellent food\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/ratings",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "ratings"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Missing Rating Details",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n  \"order_id\": 1,\r\n  \"comment\": \"Excellent food\"\r\n}\r\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/ratings",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "ratings"
+                      ]
+                    }
+                  },
+                  "status": "BAD REQUEST",
+                  "code": 400,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 17:26:31 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "41"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"error\": \"Missing required fields\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "User Rating",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"order_id\": 1,\r\n  \"rating\": 5,\r\n  \"comment\": \"Excellent food\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/ratings",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "ratings"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "User Rating",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n  \"order_id\": 1,\r\n  \"rating\": 5,\r\n  \"comment\": \"Excellent food\"\r\n}\r\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/ratings",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "ratings"
+                      ]
+                    }
+                  },
+                  "status": "CREATED",
+                  "code": 201,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 17:27:53 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "77"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"comment\": \"Excellent food\",\n    \"id\": 1,\n    \"order_id\": 1,\n    \"rating\": 5\n}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "5. Order Module",
+      "item": [
+        {
+          "name": "17. View Orders by Restaurant",
+          "item": [
+            {
+              "name": "Orders by Restaurant",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/restaurants/1/orders",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "restaurants",
+                    "1",
+                    "orders"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Orders by Restaurant",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/restaurants/1/orders",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "restaurants",
+                        "1",
+                        "orders"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 17:32:22 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "121"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"dishes\": [\n            1\n        ],\n        \"id\": 1,\n        \"restaurant_id\": 1,\n        \"status\": \"Placed\",\n        \"user_id\": 1\n    }\n]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "18. View Orders by User",
+          "item": [
+            {
+              "name": "Orders by User",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://127.0.0.1:5000/api/v1/users/1/orders",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "users",
+                    "1",
+                    "orders"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Orders by User",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://127.0.0.1:5000/api/v1/users/1/orders",
+                      "protocol": "http",
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "port": "5000",
+                      "path": [
+                        "api",
+                        "v1",
+                        "users",
+                        "1",
+                        "orders"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Server",
+                      "value": "Werkzeug/3.1.5 Python/3.11.5"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 16 Feb 2026 17:33:50 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "121"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"dishes\": [\n            1\n        ],\n        \"id\": 1,\n        \"restaurant_id\": 1,\n        \"status\": \"Placed\",\n        \"user_id\": 1\n    }\n]"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "value": ""
+    }
+  ]
+}
