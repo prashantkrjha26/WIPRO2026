@@ -15,7 +15,7 @@ app.register_blueprint(order_bp)
 
 @app.route("/")
 def home():
-    return {"message": "Foodie App made by Prashant Kumar Jha is Running"}, 200
+    return {"message": "Foodie App is Running"}, 200
 
 if __name__ == "__main__":
     app.run(debug=True)
