@@ -1,0 +1,4 @@
+2026-02-20 20:35:04,993 - INFO - --- STARTING: User EmptyName ---
+2026-02-20 20:35:18,081 - ERROR - DYNAMIC ERROR: Error: First Name is required
+2026-02-20 20:35:18,233 - INFO - Screenshot saved to: reports\run_2026-02-20_20-29-09\errors\checkout_fail_missing_1771599918.png
+2026-02-20 20:35:18,233 - INFO - Terminating current row and moving to next...

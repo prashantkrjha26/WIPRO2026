@@ -1,0 +1,4 @@
+2026-02-20 20:21:26,662 - INFO - --- STARTING: User firstname ---
+2026-02-20 20:21:40,313 - ERROR - DYNAMIC ERROR: Error: Postal Code is required
+2026-02-20 20:21:40,458 - INFO - Screenshot saved to: reports\run_2026-02-20_20-14-19\errors\checkout_fail_firstname_1771599100.png
+2026-02-20 20:21:40,458 - INFO - Terminating current row and moving to next...
