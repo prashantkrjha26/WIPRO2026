@@ -1,0 +1,8 @@
+TO Run pytest:
+
+pytest --html=report.html
+
+
+To Run Robot Test:
+
+robot .
