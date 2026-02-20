@@ -4,3 +4,6 @@ pytest tests/ -v -s --browser chrome
 To run in Edge:
 pytest tests/ -v -s --browser edge
 
+To run in Firefox:
+pytest tests/ -v -s --browser firefox
+

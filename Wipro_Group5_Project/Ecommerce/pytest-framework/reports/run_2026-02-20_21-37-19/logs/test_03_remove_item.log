@@ -1,0 +1,8 @@
+2026-02-20 21:39:11,654 - INFO - --- STARTING TEST CASE: Remove Item Flow ---
+2026-02-20 21:39:14,932 - INFO - Added item 1
+2026-02-20 21:39:15,921 - INFO - Added item 2
+2026-02-20 21:39:16,913 - INFO - Added item 3
+2026-02-20 21:39:17,905 - INFO - Added item 4
+2026-02-20 21:39:18,895 - INFO - Added item 5
+2026-02-20 21:39:20,590 - INFO - Locating Sauce Labs Backpack for removal...
+2026-02-20 21:39:20,990 - INFO - POSITIVE ASSERT: Count is exactly 4.
