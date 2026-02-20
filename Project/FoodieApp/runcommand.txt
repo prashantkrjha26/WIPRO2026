@@ -1,8 +1,34 @@
 TO Run pytest:
 
-pytest --html=report.html  --self-contained-html
+$today = Get-Date -Format "yyyy-MM-dd"
 
+$run = 1
+while (Test-Path "Reports/Pytest/${today}_Run$run") {
+    $run++
+}
+
+$folder = "Reports/Pytest/${today}_Run$run"
+
+New-Item -ItemType Directory -Path $folder -Force | Out-Null
+
+pytest --html="$folder/report.html" --self-contained-html
+
+
+
+
+
+=======================================================
+=======================================================
 
 To Run Robot Test:
 
-robot .
+$today = Get-Date -Format "yyyy-MM-dd"
+
+$run = 1
+while (Test-Path "Reports/Robot/${today}_Run$run") {
+    $run++
+}
+
+$folder = "Reports/Robot/${today}_Run$run"
+
+robot -d $folder tests/
