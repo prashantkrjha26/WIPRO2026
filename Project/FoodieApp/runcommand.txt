@@ -1,6 +1,6 @@
 TO Run pytest:
 
-pytest --html=report.html
+pytest --html=report.html  --self-contained-html
 
 
 To Run Robot Test:
