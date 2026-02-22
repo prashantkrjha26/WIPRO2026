@@ -1,0 +1,10 @@
+2026-02-22 18:19:04,616 - INFO - --- STARTING TEST CASE: Positive Login Success ---
+2026-02-22 18:19:04,616 - INFO - Navigating to SauceDemo homepage
+2026-02-22 18:19:06,844 - INFO - Entering username character by character...
+2026-02-22 18:19:09,137 - INFO - POSITIVE ASSERT: Username field verified correctly.
+2026-02-22 18:19:09,939 - INFO - Entering password character by character...
+2026-02-22 18:19:11,994 - INFO - POSITIVE ASSERT: Password field verified correctly.
+2026-02-22 18:19:12,795 - INFO - Clicking the login button...
+2026-02-22 18:19:14,520 - INFO - Login complete. Current URL is: https://www.saucedemo.com/inventory.html
+2026-02-22 18:19:14,520 - INFO - SUCCESS ASSERT: Redirected to Inventory page successfully.
+2026-02-22 18:19:14,521 - INFO - --- TEST CASE COMPLETED PASSED ---
